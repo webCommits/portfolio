@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block title %}Portfolio{% endblock %}</title>
-  <link rel="stylesheet" href="{{ global.baseurl }}/assets/style.css">
+  <link rel="stylesheet" href="{{ '/assets/style.css' | url }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="apple-touch-icon" sizes="180x180" href="{{ global.baseurl }}/assets/img/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ global.baseurl }}/assets/img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="{{ global.baseurl }}/assets/img/favicon-16x16.png">
-  <link rel="manifest" href="{{ global.baseurl }}/assets/img/site.webmanifest">
+  <link rel="manifest" href="{{ '/assets/img/site.webmanifest' | url }}">
 </head>
 <body>
   {% include "partials/header.njk" %}
@@ -22,6 +22,6 @@
   
   {% include "partials/footer.njk" %}
   
-  <script src="{{ global.baseurl }}/assets/script.js"></script>
+  <script src="{{ '/assets/script.js' | url }}"></script>
 </body>
 </html>

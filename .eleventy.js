@@ -9,6 +9,7 @@ module.exports = function(eleventyConfig){
     eleventyConfig.addPassthroughCopy("src/robots.txt")
     eleventyConfig.addPassthroughCopy("_data")
     return {
+      pathPrefix: "/portfolio",
         dir: {
           input: "src",
           output: "docs"
