@@ -7,6 +7,7 @@ module.exports = function(eleventyConfig){
     eleventyConfig.addPassthroughCopy("src/assets")
     eleventyConfig.addPassthroughCopy("src/sitemap.xml")
     eleventyConfig.addPassthroughCopy("src/robots.txt")
+    eleventyConfig.addPassthroughCopy("_data")
     return {
         dir: {
           input: "src",
