@@ -1,6 +1,5 @@
 .cache
 node_modules
 public
-docs/
 site/
 _site/
