@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.njk" %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
+{% block title %}Portfolio | Home{% endblock %}
 
-<body>
-
-</body>
-
-</html>
+{% block content %}
+  {% include "sections/hero.njk" %}
+  {% include "sections/about.njk" %}
+  {% include "sections/resume.njk" %}
+  {% include "sections/portfolio.njk" %}
+  {% include "sections/contact.njk" %}
+{% endblock %}

@@ -1,0 +1,24 @@
+<section id="portfolio" class="section section-portfolio">
+  <div class="container">
+    <div class="section-header reveal-element">
+      <h2 class="section-title">Portfolio</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="portfolio-grid">
+      {% for i in range(1, 7) %}
+      <div class="portfolio-item reveal-element">
+        <div class="portfolio-image">
+          <div class="placeholder-image"></div>
+          <div class="portfolio-overlay">
+            <div class="portfolio-overlay-content">
+              <h3>Projekt {{ i }}</h3>
+              <p>Web Design & Entwicklung</p>
+              <a href="#" class="btn btn-small">Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
