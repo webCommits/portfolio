@@ -1,72 +1,72 @@
 // src/static/js/script.js
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // Mobile Menu Toggle
   const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
   const navList = document.querySelector('.nav-list');
-  
+
   if (mobileMenuToggle) {
-    mobileMenuToggle.addEventListener('click', function() {
+    mobileMenuToggle.addEventListener('click', function () {
       this.classList.toggle('active');
       navList.classList.toggle('active');
       document.body.classList.toggle('no-scroll');
     });
   }
 
-// functions for the contact buttons
-function showTopButton() {
+  // functions for the contact buttons
+  function showTopButton() {
     console.log("Loaded");
 
     const toTop = document.querySelector('.totop');
 
     window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 100) {
-            toTop.classList.add('active')
-        } else {
-            toTop.classList.remove('active')
-        }
+      if (window.pageYOffset > 100) {
+        toTop.classList.add('active')
+      } else {
+        toTop.classList.remove('active')
+      }
     })
-}
+  }
 
-function showContactButtons() {
+  function showContactButtons() {
     console.log("Loaded");
 
     const telbutton = document.querySelector('.telbutton');
     const mailbutton = document.querySelector('.mailbutton');
 
     window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 100) {
-            telbutton.classList.add('active')
-            mailbutton.classList.add('active')
-        } else {
-            telbutton.classList.remove('active')
-            mailbutton.classList.remove('active')
-        }
+      if (window.pageYOffset > 100) {
+        telbutton.classList.add('active')
+        mailbutton.classList.add('active')
+      } else {
+        telbutton.classList.remove('active')
+        mailbutton.classList.remove('active')
+      }
     })
-}
+  }
 
   // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
       e.preventDefault();
-      
+
       // Close mobile menu if open
       if (mobileMenuToggle && mobileMenuToggle.classList.contains('active')) {
         mobileMenuToggle.classList.remove('active');
         navList.classList.remove('active');
         document.body.classList.remove('no-scroll');
       }
-      
+
       // Scroll to target
       const targetId = this.getAttribute('href');
       if (targetId === '#') return;
-      
+
       const targetElement = document.querySelector(targetId);
       if (targetElement) {
         const headerOffset = 80;
         const elementPosition = targetElement.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-        
+
         window.scrollTo({
           top: offsetPosition,
           behavior: 'smooth'
@@ -74,17 +74,17 @@ function showContactButtons() {
       }
     });
   });
-  
+
   // Scroll Indicator Click
   const scrollIndicator = document.querySelector('.scroll-indicator');
   if (scrollIndicator) {
-    scrollIndicator.addEventListener('click', function() {
+    scrollIndicator.addEventListener('click', function () {
       const aboutSection = document.querySelector('#about');
       if (aboutSection) {
         const headerOffset = 80;
         const elementPosition = aboutSection.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-        
+
         window.scrollTo({
           top: offsetPosition,
           behavior: 'smooth'
@@ -92,37 +92,37 @@ function showContactButtons() {
       }
     });
   }
-  
+
   // Reveal Elements on Scroll
   const revealElements = document.querySelectorAll('.reveal-element');
   const revealThreshold = 0.15;
-  
-  const revealOnScroll = function() {
+
+  const revealOnScroll = function () {
     revealElements.forEach(element => {
       const elementTop = element.getBoundingClientRect().top;
       const elementVisible = window.innerHeight * revealThreshold;
-      
+
       if (elementTop < window.innerHeight - elementVisible) {
         element.classList.add('active');
       }
     });
   };
-  
+
   // Initial check on load
   revealOnScroll();
   showContactButtons()
   showTopButton()
-  
+
   // Check on scroll
   window.addEventListener('scroll', revealOnScroll);
-  
+
   // Header scroll behavior
   const header = document.querySelector('.site-header');
   let lastScrollTop = 0;
-  
-  window.addEventListener('scroll', function() {
+
+  window.addEventListener('scroll', function () {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
+
     if (scrollTop > lastScrollTop && scrollTop > 200) {
       // Scrolling down
       header.style.transform = 'translateY(-100%)';
@@ -132,7 +132,7 @@ function showContactButtons() {
       header.style.transform = 'translateY(0)';
       header.style.opacity = '1';
     }
-    
+
     if (scrollTop > 50) {
       header.style.backgroundColor = 'rgba(30, 30, 46, 0.95)';
       header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
@@ -140,27 +140,27 @@ function showContactButtons() {
       header.style.backgroundColor = 'rgba(30, 30, 46, 0.8)';
       header.style.boxShadow = 'none';
     }
-    
+
     lastScrollTop = scrollTop;
   });
-  
+
   // Active nav link on scroll
   const sections = document.querySelectorAll('section');
   const navLinks = document.querySelectorAll('.nav-link');
-  
-  window.addEventListener('scroll', function() {
+
+  window.addEventListener('scroll', function () {
     let current = '';
-    
+
     sections.forEach(section => {
       const sectionTop = section.offsetTop - 100;
       const sectionHeight = section.clientHeight;
       const scrollPosition = window.pageYOffset;
-      
+
       if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
         current = section.getAttribute('id');
       }
     });
-    
+
     navLinks.forEach(link => {
       link.classList.remove('active');
       if (link.getAttribute('href') === '#' + current) {
@@ -168,28 +168,28 @@ function showContactButtons() {
       }
     });
   });
-  
+
   // Form submission handling
   const contactForm = document.getElementById('contact-form');
-  
+
   if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
-      
+
       // Here you would typically add form validation and AJAX submission
       const formData = new FormData(this);
       const formEntries = Object.fromEntries(formData.entries());
-      
+
       // Simulate form submission
       console.log('Form data submitted:', formEntries);
-      
+
       // Show success message
       const submitButton = this.querySelector('button[type="submit"]');
       const originalText = submitButton.textContent;
-      
+
       submitButton.disabled = true;
       submitButton.textContent = 'Gesendet!';
-      
+
       // Reset form
       setTimeout(() => {
         contactForm.reset();
@@ -198,20 +198,20 @@ function showContactButtons() {
       }, 2000);
     });
   }
-  
+
   // Portfolio item hover effect
   const portfolioItems = document.querySelectorAll('.portfolio-item');
-  
+
   portfolioItems.forEach(item => {
-    item.addEventListener('mouseenter', function() {
+    item.addEventListener('mouseenter', function () {
       this.querySelector('.portfolio-overlay').style.opacity = '1';
     });
-    
-    item.addEventListener('mouseleave', function() {
+
+    item.addEventListener('mouseleave', function () {
       this.querySelector('.portfolio-overlay').style.opacity = '0';
     });
   });
-  
+
   // Add CSS class for page load animations
   document.body.classList.add('page-loaded');
 });
@@ -220,10 +220,10 @@ function showContactButtons() {
 const heroSection = document.querySelector('.section-hero');
 
 if (heroSection) {
-  window.addEventListener('scroll', function() {
+  window.addEventListener('scroll', function () {
     const scrollPosition = window.pageYOffset;
     const parallaxSpeed = 0.5;
-    
+
     heroSection.style.backgroundPosition = `center ${scrollPosition * parallaxSpeed}px`;
   });
 }
@@ -231,16 +231,16 @@ if (heroSection) {
 // Typewriter effect for hero section (optional)
 function initTypewriter() {
   const titleElement = document.querySelector('.title');
-  
+
   if (!titleElement) return;
-  
+
   const textToType = titleElement.textContent;
   titleElement.textContent = '';
   titleElement.style.borderRight = '2px solid var(--primary)';
-  
+
   let charIndex = 0;
   const typingSpeed = 100;
-  
+
   function typeText() {
     if (charIndex < textToType.length) {
       titleElement.textContent += textToType.charAt(charIndex);
@@ -250,7 +250,7 @@ function initTypewriter() {
       titleElement.style.borderRight = 'none';
     }
   }
-  
+
   setTimeout(typeText, 1000); // Start after a delay
 }
 
@@ -277,9 +277,9 @@ function animateCounter(element, start, end, duration) {
 // Initialize counters when they come into view
 function initCounters() {
   const counters = document.querySelectorAll('.counter');
-  
+
   if (counters.length === 0) return;
-  
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -290,11 +290,33 @@ function initCounters() {
       }
     });
   }, { threshold: 0.5 });
-  
+
   counters.forEach(counter => {
     observer.observe(counter);
   });
 }
 
-// Uncomment to enable counter animations if you add them
-// initCounters();
+
+function sendMail(event) {
+  event.preventDefault();
+
+  // Werte aus dem Formular holen
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
+
+  // Mailto-Link zusammenbauen
+  const subject = "Neue Nachricht von deinem Portfolio!";
+  const body = `Name: ${name}\nE-Mail: ${email}\n\nNachricht:\n${message}`;
+  const mailtoLink = `mailto:webcommitswebdesigns@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+  // Mail-Client öffnen
+  window.location.href = mailtoLink;
+}
+
+// Event Listener anhängen (nachdem DOM geladen ist)
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("contact-form");
+  form.addEventListener("submit", sendMail);
+});
+
