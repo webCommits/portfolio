@@ -385,18 +385,15 @@ img {
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
 }
-
 .skills h3 {
   margin-bottom: 1.5rem;
   color: var(--text);
 }
-
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
-
 .skill-item {
   display: flex;
   align-items: center;
@@ -405,11 +402,9 @@ img {
   border-radius: var(--border-radius);
   transition: transform var(--transition-speed) ease;
 }
-
 .skill-item:hover {
   transform: translateY(-5px);
 }
-
 .skill-icon {
   width: 40px;
   height: 40px;
@@ -421,11 +416,15 @@ img {
   margin-right: 1rem;
   color: var(--primary, #cba6f7);
 }
-
+.skill-icon svg {
+  width: 32px;
+  height: 32px;
+  max-width: 100%;
+  max-height: 100%;
+}
 .about-text p {
   text-align: justify;
 }
-
 .skill-name {
   font-weight: 500;
 }
