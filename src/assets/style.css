@@ -17,7 +17,7 @@
   --sapphire: #74c7ec;
   --blue: #89b4fa;
   --lavender: #b4befe;
-  
+
   /* Surface colors */
   --text: #cdd6f4;
   --subtext1: #bac2de;
@@ -31,13 +31,13 @@
   --base: #1e1e2e;
   --mantle: #181825;
   --crust: #11111b;
-  
+
   /* Other variables */
   --primary: var(--mauve);
   --secondary: var(--sapphire);
   --accent: var(--pink);
   --highlight: var(--teal);
-  
+
   --container-width: 1200px;
   --header-height: 80px;
   --border-radius: 12px;
@@ -46,7 +46,9 @@
 }
 
 /* ===== Reset & Base ===== */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -75,7 +77,12 @@ a:hover {
   color: var(--accent);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-bottom: 1rem;
   line-height: 1.2;
   font-weight: 700;
@@ -354,12 +361,19 @@ img {
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateY(0);
   }
+
   40% {
     transform: translateY(-10px);
   }
+
   60% {
     transform: translateY(-5px);
   }
@@ -406,6 +420,10 @@ img {
   border-radius: 50%;
   margin-right: 1rem;
   color: var(--primary);
+}
+
+.about-text p {
+  text-align: justify;
 }
 
 .skill-name {
@@ -637,6 +655,86 @@ img {
   color: var(--primary);
 }
 
+.totop {
+  background: none;
+  position: fixed;
+  bottom: 64px;
+  right: 64px;
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0 4px #CDD6F4;
+  opacity: 0;
+  pointer-events: none;
+  transition: all .4s;
+}
+
+.totop.active {
+  bottom: 64px;
+  opacity: 80%;
+  pointer-events: auto;
+  z-index: 999;
+}
+
+.telbutton {
+  background: none;
+  position: fixed;
+  bottom: 64px;
+  right: 64px;
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0 4px #CDD6F4;
+  opacity: 0;
+  pointer-events: none;
+  transition: all .4s;
+}
+
+.telbutton.active {
+  bottom: 164px;
+  opacity: 60%;
+  pointer-events: auto;
+  z-index: 999;
+}
+
+.mailbutton {
+  background: none;
+  position: fixed;
+  bottom: 64px;
+  right: 64px;
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0 4px #CDD6F4;
+  opacity: 0;
+  pointer-events: none;
+  transition: all .4s;
+}
+
+.mailbutton.active {
+  bottom: 114px;
+  opacity: 60%;
+  pointer-events: auto;
+  z-index: 999;
+}
+
+.totop img,
+.telbutton img,
+.mailbutton img {
+  width: 18px;
+  filter: invert(84%) sepia(21%) saturate(457%) hue-rotate(195deg) brightness(101%) contrast(92%);
+
+}
+
 /* ===== Animations ===== */
 .reveal-element {
   opacity: 0;
@@ -651,29 +749,30 @@ img {
 
 /* ===== Responsive ===== */
 @media (max-width: 992px) {
+
   .about-content,
   .contact-content {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .hero-content {
     flex-direction: column-reverse;
     text-align: center;
   }
-  
+
   .cta-buttons {
     justify-content: center;
   }
-  
+
   .hero-image {
     margin-bottom: 2rem;
   }
-  
+
   .section-title {
     font-size: 2rem;
   }
-  
+
   .name {
     font-size: 3rem;
   }
@@ -683,16 +782,16 @@ img {
   .section {
     padding: 4rem 0;
   }
-  
+
   .section-header {
     margin-bottom: 2rem;
   }
-  
+
   .mobile-menu-toggle {
     display: block;
     z-index: 101;
   }
-  
+
   .nav-list {
     position: fixed;
     top: 0;
@@ -708,27 +807,27 @@ img {
     z-index: 100;
     border-left: 1px solid var(--surface0);
   }
-  
+
   .nav-list.active {
     right: 0;
   }
-  
+
   .nav-item {
     margin-left: 0;
   }
-  
+
   .mobile-menu-toggle.active .bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
   }
-  
+
   .mobile-menu-toggle.active .bar:nth-child(2) {
     opacity: 0;
   }
-  
+
   .mobile-menu-toggle.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
-  
+
   .skills-grid {
     grid-template-columns: 1fr;
   }
@@ -738,20 +837,38 @@ img {
   .portfolio-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .section {
     padding: 3rem 0;
   }
-  
+
   .container {
     padding: 0 1rem;
   }
-  
+
   .name {
     font-size: 2.5rem;
   }
-  
+
   .title {
     font-size: 1.25rem;
+  }
+
+  .totop.active {
+    bottom: 24px;
+    right: 24px;
+    opacity: 60%;
+  }
+
+  .telbutton.active {
+    bottom: 64px;
+    right: 24px;
+    opacity: 60%;
+  }
+
+  .mailbutton.active {
+    bottom: 104px;
+    right: 24px;
+    opacity: 60%;
   }
 }

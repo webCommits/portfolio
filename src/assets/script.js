@@ -13,6 +13,38 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+// functions for the contact buttons
+function showTopButton() {
+    console.log("Loaded");
+
+    const toTop = document.querySelector('.totop');
+
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 100) {
+            toTop.classList.add('active')
+        } else {
+            toTop.classList.remove('active')
+        }
+    })
+}
+
+function showContactButtons() {
+    console.log("Loaded");
+
+    const telbutton = document.querySelector('.telbutton');
+    const mailbutton = document.querySelector('.mailbutton');
+
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 100) {
+            telbutton.classList.add('active')
+            mailbutton.classList.add('active')
+        } else {
+            telbutton.classList.remove('active')
+            mailbutton.classList.remove('active')
+        }
+    })
+}
+
   // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -78,6 +110,8 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Initial check on load
   revealOnScroll();
+  showContactButtons()
+  showTopButton()
   
   // Check on scroll
   window.addEventListener('scroll', revealOnScroll);
