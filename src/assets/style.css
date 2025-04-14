@@ -566,6 +566,10 @@ img {
   color: var(--subtext0);
 }
 
+.portfolio-image img {
+  height: 100%;
+}
+
 /* ===== Contact Section ===== */
 .contact-content {
   display: grid;
