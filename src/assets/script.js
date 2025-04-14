@@ -210,6 +210,15 @@ document.addEventListener('DOMContentLoaded', function () {
     item.addEventListener('mouseleave', function () {
       this.querySelector('.portfolio-overlay').style.opacity = '0';
     });
+
+    item.addEventListener('click', function () {
+      const overlay = this.querySelector('.portfolio-overlay');
+      if (overlay.style.opacity === '1') {
+        overlay.style.opacity = '0'; // Wenn es sichtbar ist, dann ausblenden
+      } else {
+        overlay.style.opacity = '1'; // Ansonsten einblenden
+      }
+    });
   });
 
   // Add CSS class for page load animations
