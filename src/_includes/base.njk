@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,16 +16,29 @@
   <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/img/favicon-16x16.png
   ' | url }}">
   <link rel="manifest" href="{{ '/assets/img/site.webmanifest' | url }}">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6Z1LW6353Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-6Z1LW6353Z');
+  </script>
+
 </head>
+
 <body>
   {% include "partials/header.njk" %}
-  
+
   <main id="main-content" class="main-content">
     {% block content %}{% endblock %}
   </main>
-  
+
   {% include "partials/footer.njk" %}
-  
+
   <script src="{{ '/assets/script.js' | url }}"></script>
 </body>
+
 </html>
