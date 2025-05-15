@@ -430,6 +430,12 @@ img {
   font-weight: 500;
 }
 
+.skill-img {
+  width: 24px;
+  height: 24px;
+  filter: invert(72%) sepia(28%) saturate(1660%) hue-rotate(204deg) brightness(104%) contrast(94%);
+}
+
 /* ===== Resume Section ===== */
 .resume-content {
   display: grid;
