@@ -651,6 +651,10 @@ img {
   align-items: center;
 }
 
+.footer-info p {
+  margin: 0;
+}
+
 .footer-social {
   display: flex;
   gap: 1rem;
@@ -744,6 +748,13 @@ img {
   filter: invert(84%) sepia(21%) saturate(457%) hue-rotate(195deg) brightness(101%) contrast(92%);
 
 }
+
+/* ===== Impressum/Datenschutz ===== */
+.impressum-page {
+  margin-top: 80px;
+  padding: 1rem;
+}
+
 
 /* ===== Animations ===== */
 .reveal-element {
