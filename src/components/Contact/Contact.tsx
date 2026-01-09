@@ -75,7 +75,6 @@ const Contact: React.FC = () => {
           method="POST"
         >
           <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value="https://www.lukasschaffrath.online/danke" />
           <input type="hidden" name="_subject" value="Neue Nachricht von Portfolio Website" />
           
           <div className="form-group">

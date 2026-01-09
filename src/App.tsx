@@ -11,7 +11,6 @@ import Footer from './components/Footer/Footer';
 import FloatingButtons from './components/FloatingButtons/FloatingButtons';
 import Impressum from './pages/Impressum';
 import Datenschutz from './pages/Datenschutz';
-import Danke from './pages/Danke';
 import useScrollTheme from './hooks/useScrollTheme';
 import './styles/themes.css';
 import './styles/global.css';
@@ -69,7 +68,6 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/impressum" element={<Impressum />} />
         <Route path="/datenschutz" element={<Datenschutz />} />
-        <Route path="/danke" element={<Danke />} />
       </Routes>
     </div>
   );
