@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Epilogue', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Container utilities */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Responsive grid */
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.flex {
+  display: flex;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* Button base */
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: 'Epilogue', sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* Link base */
+a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Image responsiveness */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Section transitions */
+section {
+  position: relative;
+  overflow: hidden;
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, transparent 0%, var(--base) 100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+/* Smooth transitions between themes */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 0.8s;
+  transition-timing-function: ease;
+}
