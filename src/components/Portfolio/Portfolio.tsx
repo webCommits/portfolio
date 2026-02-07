@@ -22,11 +22,11 @@ const Portfolio: React.FC = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: 'Anglistik Web',
-      description: 'Sprechstunden- und Buchungssystem mit Login und Account-Verwaltung. Basierend auf Django und Python.',
-      technologies: ['Django', 'Python', 'HTMX', 'HTML/CSS'],
-      link: 'https://web.anglistik.rwth-aachen.de',
-      image: '/anglistikweb.png',
+      title: 'webCommits',
+      description: 'Die Seite der besten Webentwickler.',
+      technologies: ['HTML', 'CSS', 'JavaScript'],
+      link: 'https://www.webcommits.info',
+      image: '/webcommits.png',
     },
     {
       id: 2,
@@ -38,6 +38,22 @@ const Portfolio: React.FC = () => {
     },
     {
       id: 3,
+      title: 'Anglistik Web',
+      description: 'Sprechstunden- und Buchungssystem mit Login und Account-Verwaltung. Basierend auf Django und Python.',
+      technologies: ['Django', 'Python', 'HTMX', 'HTML/CSS'],
+      link: 'https://web.anglistik.rwth-aachen.de',
+      image: '/anglistikweb.png',
+    },
+    {
+      id: 4,
+      title: 'Portfolio Website',
+      description: 'Meine persönliche Portfolio-Website, die meine Projekte und Fähigkeiten präsentiert. Entwickelt mit React, GSAP für Animationen und einem modernen, responsiven Design. Überzeugen Sie sich auf Github per Click auf den Link! (Branch: redesign)',
+      technologies: ['React', 'GSAP', 'CSS', 'HTML'],
+      link: 'https://github.com/webCommits/portfolio',
+      image: '/portfolio.png',
+    },
+    {
+      id: 5,
       title: 'CL-Verkehrstechnik',
       description: 'Verkehrszeichenpläne und -technik. Klar, präzise, deutschlandweit, in reinem Vanilla Code.',
       technologies: ['HTML', 'Vanilla CSS', 'Vanilla JavaScript'],
@@ -45,7 +61,7 @@ const Portfolio: React.FC = () => {
       image: '/clweb.png',
     },
     {
-      id: 4,
+      id: 6,
       title: 'Lashes by Dim',
       description: 'Interaktive Website für eine Wimpernstylistin',
       technologies: ['HTML', 'Vanilla CSS', 'Vanilla JavaScript'],
@@ -53,7 +69,7 @@ const Portfolio: React.FC = () => {
       image: '/lashesbydim.png',
     },
     {
-      id: 5,
+      id: 7,
       title: 'Ben-Bachmair',
       description: 'Website eines international renommierten Professors & Autors, basierend auf Vue.js.',
       technologies: ['Vue.js', 'JavaScript'],
@@ -61,7 +77,7 @@ const Portfolio: React.FC = () => {
       image: '/benbachmair.png',
     },
     {
-      id: 6,
+      id: 8,
       title: 'Kernbohrungen Günther',
       description: 'Website eines Meisterbetriebs im Mauerwerks- und Betonbau, aufgebaut mit Eleventy und Nunjucks.',
       technologies: ['Eleventy', 'Nunjucks', 'HTML/CSS'],
@@ -69,7 +85,7 @@ const Portfolio: React.FC = () => {
       image: '/kernbohrungen-guenther.png',
     },
     {
-      id: 7,
+      id: 9,
       title: 'AnzeigeSchalten',
       description: 'Eine Website, die den Prozess des Anzeigens vereinfachen soll. Speziell für die Großeltern als PWA erstellt.',
       technologies: ['PWA', 'HTML', 'CSS', 'JavaScript'],
@@ -77,7 +93,15 @@ const Portfolio: React.FC = () => {
       image: '/anzeigeschalten.png',
     },
     {
-      id: 8,
+      id: 10,
+      title: 'MD to HTML/PDF Converter',
+      description: 'Eine GUI Python-App, die Markdown-Dateien in HTML oder PDF umwandelt. Erstellt mit Tkinter und Pandoc. Mit Merge- und Export-Funktionalität für mehrere Dateien.',
+      technologies: ['Python', 'PythonTKinter', 'Pandoc', 'GUI'],
+      link: 'https://github.com/LStoneyy/md-to-html-pdf',
+      image: '/mdtopdf.png',
+    },
+    {
+      id: 11,
       title: 'Notion to Obsidian Transition Tool',
       description: 'Ein kleines Script, dass bei der Transition von Notion to Obsidian hilft, durch schlaue Dateikonvertierung.',
       technologies: ['Python', 'Bash', 'Script'],
@@ -85,20 +109,12 @@ const Portfolio: React.FC = () => {
       image: '/notion.png',
     },
     {
-      id: 9,
+      id: 11,
       title: 'Snake Game',
       description: 'Ein einfacher Snake-Klon, geschrieben in Python mit PyGame. Erstellt als self-study Programmier-Projekt im Zuge eines Lehrgangs in der Technikdidaktik.',
       technologies: ['Python', 'PyGame'],
       link: 'https://github.com/LStoneyy/snake-game',
       image: '/snakegame.png',
-    },
-    {
-      id: 10,
-      title: 'webCommits',
-      description: 'Die Seite der besten Webentwickler.',
-      technologies: ['HTML', 'CSS', 'JavaScript'],
-      link: 'https://webcommits.github.io/webcommits-website/',
-      image: '/webcommits.png',
     },
   ];
 
