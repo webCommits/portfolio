@@ -98,7 +98,7 @@ const About: React.FC = () => {
     }, aboutRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [techStack.length]);
 
   return (
     <section id="about" className="about theme-frappe" ref={aboutRef}>
