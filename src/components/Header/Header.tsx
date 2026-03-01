@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import './Header.css';
 
 interface HeaderProps {
@@ -6,16 +7,21 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ activeSection }) => {
+  const { t, i18n } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [showHamburger, setShowHamburger] = useState(false);
+
+  const toggleLanguage = () => {
+    const newLang = i18n.language === 'de' ? 'en' : 'de';
+    i18n.changeLanguage(newLang);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       
       setIsScrolled(scrollPosition > 50);
-      // Show hamburger menu after scrolling 300px
       setShowHamburger(scrollPosition > 300);
     };
 
@@ -33,7 +39,6 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
 
   return (
     <>
-      {/* Desktop Header (visible until hamburger appears) */}
       <header 
         className={`header ${isScrolled ? 'scrolled' : ''} ${showHamburger ? 'hidden' : ''}`}
       >
@@ -47,41 +52,47 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
               className={activeSection === 'hero' ? 'active' : ''}
               onClick={(e) => { e.preventDefault(); scrollToSection('hero'); }}
             >
-              start
+              {t('header.start')}
             </a>
             <a 
               href="#about" 
               className={activeSection === 'about' ? 'active' : ''}
               onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}
             >
-              über mich
+              {t('header.about')}
             </a>
             <a 
               href="#portfolio" 
               className={activeSection === 'portfolio' ? 'active' : ''}
               onClick={(e) => { e.preventDefault(); scrollToSection('portfolio'); }}
             >
-              portfolio
+              {t('header.portfolio')}
             </a>
             <a 
               href="#resume" 
               className={activeSection === 'resume' ? 'active' : ''}
               onClick={(e) => { e.preventDefault(); scrollToSection('resume'); }}
             >
-              lebenslauf
+              {t('header.resume')}
             </a>
             <a 
               href="#contact" 
               className={activeSection === 'contact' ? 'active' : ''}
               onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}
             >
-              kontakt
+              {t('header.contact')}
             </a>
+            <button 
+              className="lang-toggle" 
+              onClick={toggleLanguage}
+              aria-label="Toggle language"
+            >
+              {i18n.language === 'de' ? 'EN' : 'DE'}
+            </button>
           </nav>
         </div>
       </header>
 
-      {/* Hamburger Button */}
       <button 
         className={`hamburger ${showHamburger ? 'visible' : ''} ${isSidebarOpen ? 'open' : ''}`}
         onClick={() => setIsSidebarOpen(!isSidebarOpen)}
@@ -92,7 +103,6 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
         <span></span>
       </button>
 
-      {/* Sidebar */}
       <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
         <nav className="sidebar-nav">
           <a 
@@ -100,40 +110,45 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
             className={activeSection === 'hero' ? 'active' : ''}
             onClick={(e) => { e.preventDefault(); scrollToSection('hero'); }}
           >
-            start
+            {t('header.start')}
           </a>
           <a 
             href="#about" 
             className={activeSection === 'about' ? 'active' : ''}
             onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}
           >
-            über mich
+            {t('header.about')}
           </a>
           <a 
             href="#portfolio" 
             className={activeSection === 'portfolio' ? 'active' : ''}
             onClick={(e) => { e.preventDefault(); scrollToSection('portfolio'); }}
           >
-            portfolio
+            {t('header.portfolio')}
           </a>
           <a 
             href="#resume" 
             className={activeSection === 'resume' ? 'active' : ''}
             onClick={(e) => { e.preventDefault(); scrollToSection('resume'); }}
           >
-            lebenslauf
+            {t('header.resume')}
           </a>
           <a 
             href="#contact" 
             className={activeSection === 'contact' ? 'active' : ''}
             onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}
           >
-            kontakt
+            {t('header.contact')}
           </a>
+          <button 
+            className="lang-toggle-sidebar" 
+            onClick={toggleLanguage}
+          >
+            {i18n.language === 'de' ? '🇬🇧 English' : '🇩🇪 Deutsch'}
+          </button>
         </nav>
       </div>
 
-      {/* Sidebar Overlay */}
       {isSidebarOpen && (
         <div 
           className="sidebar-overlay" 

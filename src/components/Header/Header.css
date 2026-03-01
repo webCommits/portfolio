@@ -80,6 +80,48 @@
   width: 100%;
 }
 
+.lang-toggle {
+  background: transparent;
+  border: 2px solid #04a5e5;
+  color: #04a5e5;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lang-toggle:hover {
+  background: #04a5e5;
+  color: white;
+}
+
+.lang-toggle-sidebar {
+  background: transparent;
+  border: 2px solid #04a5e5;
+  color: #04a5e5;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.lang-toggle-sidebar:hover {
+  background: #04a5e5;
+  color: white;
+}
+
+.sidebar[data-theme="frappe"] .lang-toggle-sidebar,
+.sidebar[data-theme="macchiato"] .lang-toggle-sidebar,
+.sidebar[data-theme="mocha"] .lang-toggle-sidebar {
+  color: #04a5e5;
+}
+
 /* Hamburger Button */
 .hamburger {
   position: fixed;

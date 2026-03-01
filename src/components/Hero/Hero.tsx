@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { gsap } from 'gsap';
 import './Hero.css';
 
 const Hero: React.FC = () => {
+  const { t } = useTranslation();
   const heroRef = useRef<HTMLElement>(null);
   const nameRef = useRef<HTMLHeadingElement>(null);
   const surnameRef = useRef<HTMLHeadingElement>(null);
@@ -12,7 +14,6 @@ const Hero: React.FC = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Main content animations
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
       tl.from(nameRef.current, {
@@ -37,7 +38,6 @@ const Hero: React.FC = () => {
         ease: 'back.out(1.7)',
       }, '-=0.8');
 
-      // Floating animation for image
       gsap.to(imageRef.current, {
         y: -20,
         duration: 2,
@@ -46,7 +46,6 @@ const Hero: React.FC = () => {
         ease: 'sine.inOut',
       });
 
-      // Parallax scroll effect for hero
       gsap.to(heroRef.current, {
         scrollTrigger: {
           trigger: heroRef.current,
@@ -58,7 +57,6 @@ const Hero: React.FC = () => {
         y: 200,
       });
 
-      // Create floating particles
       if (particlesRef.current) {
         const particleCount = 30;
         for (let i = 0; i < particleCount; i++) {
@@ -94,19 +92,19 @@ const Hero: React.FC = () => {
       <div className="hero-container">
         <div className="hero-content">
           <h1 className="hero-name" ref={nameRef}>
-            lukas.
+            {t('hero.name')}
           </h1>
           <h1 className="hero-surname" ref={surnameRef}>
-            schaffrath
+            {t('hero.surname')}
           </h1>
           <p className="hero-subtitle" ref={subtitleRef}>
-            Web Developer & Designer
+            {t('hero.subtitle.0')}
             <br />
-            IT Administrator
+            {t('hero.subtitle.1')}
             <br />
-            Lehrer für Gymnasien & Gesamtschulen
+            {t('hero.subtitle.2')}
             <br />
-            CDE Student
+            {t('hero.subtitle.3')}
           </p>
         </div>
         <div className="hero-image" ref={imageRef}>

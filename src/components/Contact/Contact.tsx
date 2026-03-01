@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './Contact.css';
@@ -6,11 +7,11 @@ import './Contact.css';
 gsap.registerPlugin(ScrollTrigger);
 
 const Contact: React.FC = () => {
+  const { t } = useTranslation();
   const contactRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Section entrance - spiral in effect
       gsap.from(contactRef.current, {
         scrollTrigger: {
           trigger: contactRef.current,
@@ -63,62 +64,62 @@ const Contact: React.FC = () => {
   return (
     <section id="contact" className="contact theme-mocha" ref={contactRef}>
       <div className="contact-container">
-        <h2 className="contact-title">Bereit zu arbeiten?</h2>
+        <h2 className="contact-title">{t('contact.title')}</h2>
         <p className="contact-subtitle">
-          Melden Sie sich gerne per Mail über mein Kontaktformular oder per Telefon.
+          {t('contact.subtitle.0')}
           <br />
-          Jederzeit!
+          {t('contact.subtitle.1')}
         </p>
-        <form 
-          className="contact-form" 
-          action="https://formsubmit.co/webcommitswebdesigns@gmail.com" 
+        <form
+          className="contact-form"
+          action="https://formsubmit.co/webcommitswebdesigns@gmail.com"
           method="POST"
         >
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_subject" value="Neue Nachricht von Portfolio Website" />
-          
+
           <div className="form-group">
             <input
               type="text"
               name="name"
-              placeholder="Ihr Name"
+              placeholder={t('contact.form.name')}
               required
               className="form-input"
             />
           </div>
-          
+
           <div className="form-group">
             <input
               type="email"
               name="email"
-              placeholder="Ihre E-Mail"
+              placeholder={t('contact.form.email')}
               required
               className="form-input"
             />
           </div>
-          
+
           <div className="form-group">
             <input
               type="text"
               name="subject"
-              placeholder="Betreff"
+              placeholder={t('contact.form.subject')}
               required
               className="form-input"
             />
           </div>
-          
+
           <div className="form-group">
             <textarea
               name="message"
-              placeholder="Ihre Nachricht"
+              placeholder={t('contact.form.message')}
               rows={6}
               required
               className="form-textarea"
             ></textarea>
           </div>
-          
+
           <button type="submit" className="form-submit">
-            Nachricht senden
+            {t('contact.form.submit')}
           </button>
         </form>
       </div>

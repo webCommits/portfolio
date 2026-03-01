@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './About.css';
@@ -6,6 +7,7 @@ import './About.css';
 gsap.registerPlugin(ScrollTrigger);
 
 const About: React.FC = () => {
+  const { t } = useTranslation();
   const aboutRef = useRef<HTMLElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const techStackRef = useRef<HTMLDivElement>(null);
@@ -24,7 +26,6 @@ const About: React.FC = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Section entrance animation - slide from right
       gsap.from(aboutRef.current, {
         scrollTrigger: {
           trigger: aboutRef.current,
@@ -36,7 +37,6 @@ const About: React.FC = () => {
         opacity: 0,
       });
 
-      // Text animation
       gsap.from(textRef.current, {
         scrollTrigger: {
           trigger: aboutRef.current,
@@ -48,10 +48,8 @@ const About: React.FC = () => {
         scale: 0.8,
       });
 
-      // Tech stack items animation - continuous text lines moving left to right
       const techItems = techStackRef.current?.querySelectorAll('.tech-item');
       if (techItems) {
-        // Create multiple rows of text that fill the section height
         const itemsPerRow = 5;
         const rows = Math.ceil(techStack.length / itemsPerRow);
         
@@ -59,15 +57,12 @@ const About: React.FC = () => {
           const row = Math.floor(index / itemsPerRow);
           const col = index % itemsPerRow;
           
-          // Calculate text width approximately
           const itemWidth = 280;
           const spacing = 100;
           
-          // Position items in a line, one after another
           const startX = col * (itemWidth + spacing);
-          // Distribute rows evenly across the full section height
           const sectionHeight = window.innerHeight;
-          const rowHeight = sectionHeight / (rows + 2); // +2 for padding top/bottom
+          const rowHeight = sectionHeight / (rows + 2);
           const startY = rowHeight * (row + 1);
 
           gsap.set(item, {
@@ -75,11 +70,9 @@ const About: React.FC = () => {
             y: startY,
           });
 
-          // Different speed for each row
-          const speeds = [18, 23, 28, 33]; // 4 different speeds
+          const speeds = [18, 23, 28, 33];
           const duration = speeds[row % speeds.length];
 
-          // Infinite horizontal scroll
           gsap.to(item, {
             x: `+=${window.innerWidth + itemWidth * itemsPerRow}`,
             duration: duration,
@@ -116,28 +109,11 @@ const About: React.FC = () => {
       </div>
       <div className="about-container">
         <div className="about-content" ref={textRef}>
-          <h2 className="about-title">Über Mich</h2>
+          <h2 className="about-title">{t('about.title')}</h2>
           <div className="about-text">
-            <p>
-              Ich bin Lukas Schaffrath – Webentwickler mit technischem Lehramtsabschluss der RWTH 
-              Aachen und einer Leidenschaft für digitale Lösungen. Was einst als studentischer Nebenjob 
-              begann, wurde zur Berufung: der Entwicklung moderner, leistungsstarker und bezahlbarer 
-              Websites.
-            </p>
-            <p>
-              Während meines Studiums war ich als Webentwickler und wissenschaftliche Hilfskraft an der 
-              RWTH tätig. Heute betreue ich als IT-Administrator verschiedene technische Projekte am 
-              Institut für Anglistik und arbeite parallel selbstständig an Webprojekten unter dem Namen 
-              webCommits web Designs.
-            </p>
-            <p>
-              Ich setze auf nachhaltigen, sauberen Code und nutzerfreundliche Konzepte. Ob mit 
-              klassischen Webtechnologien wie HTML, CSS, JavaScript oder Frameworks wie Django, Ruby on 
-              Rails, Eleventy und Symfony. Besonders gerne unterstütze ich kleinere Unternehmen mit 
-              individuellen Lösungen. Mein technisches Know-how kombiniere ich mit pädagogischem 
-              Feingefühl und klarer Kommunikation. Denn gute Webentwicklung beginnt mit dem Verständnis 
-              für die Menschen dahinter.
-            </p>
+            <p>{t('about.paragraphs.0')}</p>
+            <p>{t('about.paragraphs.1')}</p>
+            <p>{t('about.paragraphs.2')}</p>
           </div>
         </div>
       </div>

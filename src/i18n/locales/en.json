@@ -1,0 +1,184 @@
+{
+  "header": {
+    "start": "start",
+    "about": "about me",
+    "portfolio": "portfolio",
+    "resume": "resume",
+    "contact": "contact"
+  },
+  "hero": {
+    "name": "lukas.",
+    "surname": "schaffrath",
+    "subtitle": [
+      "Web Developer & Designer",
+      "IT Administrator",
+      "Teacher for High Schools",
+      "CDE Student"
+    ]
+  },
+  "about": {
+    "title": "About Me",
+    "paragraphs": [
+      "I'm Lukas Schaffrath – web developer with a technical teaching degree from RWTH Aachen University and a passion for digital solutions. What started as a student side job became my calling: developing modern, powerful, and affordable websites.",
+      "During my studies, I worked as a web developer and research assistant at RWTH. Today, I manage various technical projects as IT Administrator at the Institute of English Studies and work independently on web projects under the name webCommits web Designs.",
+      "I focus on sustainable, clean code and user-friendly concepts. Whether with classic web technologies like HTML, CSS, JavaScript or frameworks like Django, Ruby on Rails, Eleventy, and Symfony. I particularly enjoy supporting smaller businesses with individual solutions. I combine my technical expertise with pedagogical sensitivity and clear communication. Because good web development starts with understanding the people behind it."
+    ]
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "projectLink": "View Project →",
+    "projects": {
+      "webcommits": {
+        "title": "webCommits",
+        "description": "The website of the best web developers.",
+        "technologies": ["HTML", "CSS", "JavaScript"]
+      },
+      "gpupgrade": {
+        "title": "GPUpgrade",
+        "description": "Web tool for analyzing and comparing GPU performance with upgrade calculator, search, and filter functions. Built with Eleventy (11ty), AlpineJS, JavaScript, and JSON database by u/SenorPeterz.",
+        "technologies": ["Eleventy", "AlpineJS", "JavaScript", "JSON"]
+      },
+      "anglistikweb": {
+        "title": "Anglistik Web",
+        "description": "Office hours and booking system with login and account management. Based on Django and Python.",
+        "technologies": ["Django", "Python", "HTMX", "HTML/CSS"]
+      },
+      "portfolio": {
+        "title": "Portfolio Website",
+        "description": "My personal portfolio website showcasing my projects and skills. Built with React, GSAP for animations, and a modern, responsive design. Check it out on GitHub! (Branch: redesign)",
+        "technologies": ["React", "GSAP", "CSS", "HTML"]
+      },
+      "clweb": {
+        "title": "CL-Verkehrstechnik",
+        "description": "Traffic sign plans and technology. Clear, precise, nationwide, in pure vanilla code.",
+        "technologies": ["HTML", "Vanilla CSS", "Vanilla JavaScript"]
+      },
+      "lashesbydim": {
+        "title": "Lashes by Dim",
+        "description": "Interactive website for a lash stylist",
+        "technologies": ["HTML", "Vanilla CSS", "Vanilla JavaScript"]
+      },
+      "benbachmair": {
+        "title": "Ben-Bachmair",
+        "description": "Website of an internationally renowned professor & author, based on Vue.js.",
+        "technologies": ["Vue.js", "JavaScript"]
+      },
+      "kernbohrungen": {
+        "title": "Kernbohrungen Günther",
+        "description": "Website of a master craftsman business in masonry and concrete construction, built with Eleventy and Nunjucks.",
+        "technologies": ["Eleventy", "Nunjucks", "HTML/CSS"]
+      },
+      "anzeigeschalten": {
+        "title": "AnzeigeSchalten",
+        "description": "A website that simplifies the process of placing ads. Created as a PWA specifically for my grandparents.",
+        "technologies": ["PWA", "HTML", "CSS", "JavaScript"]
+      },
+      "mdtopdf": {
+        "title": "MD to HTML/PDF Converter",
+        "description": "A GUI Python app that converts Markdown files to HTML or PDF. Built with Tkinter and Pandoc. With merge and export functionality for multiple files.",
+        "technologies": ["Python", "PythonTKinter", "Pandoc", "GUI"]
+      },
+      "notion": {
+        "title": "Notion to Obsidian Transition Tool",
+        "description": "A small script that helps with the transition from Notion to Obsidian through smart file conversion.",
+        "technologies": ["Python", "Bash", "Script"]
+      },
+      "snakegame": {
+        "title": "Snake Game",
+        "description": "A simple Snake clone written in Python with PyGame. Created as a self-study programming project during a didactics course.",
+        "technologies": ["Python", "PyGame"]
+      }
+    }
+  },
+  "resume": {
+    "title": "Resume & Qualifications",
+    "experience": "experience",
+    "education": "education",
+    "experienceItems": [
+      {
+        "year": "Since 05/2025",
+        "title": "Freelance Web Developer",
+        "organization": "webCommits web Designs",
+        "description": "Freelance full-stack web development using various modern technologies under the name webCommits web Designs."
+      },
+      {
+        "year": "Since 10/2023",
+        "title": "IT Administrator",
+        "organization": "Institute of English and American Studies, RWTH Aachen",
+        "description": "Support for IT infrastructure, network maintenance, and technical concerns of the institute, as well as full-stack web development."
+      },
+      {
+        "year": "11/2024 - 02/2025",
+        "title": "Project Manager (Working Student)",
+        "organization": "Promedia Maassen",
+        "description": "Material creation (teaching materials), collaboration on NetRace Aachen/Netrace Kiel, IT support, and website development."
+      },
+      {
+        "year": "02/2020 - 10/2024",
+        "title": "Tutor",
+        "organization": "Schülerhilfe, Geilenkirchen",
+        "description": "Tutoring in English, German, and Computer Science for students of various grade levels and vocational students."
+      },
+      {
+        "year": "12/2022 – 10/2023",
+        "title": "Research Assistant",
+        "organization": "Institute of English and American Studies, RWTH Aachen",
+        "description": "Development of the web-based self-study course \"Virtual Acoustic Immersion for Advanced Bachelor's Students of English\"."
+      },
+      {
+        "year": "2016 – 2019",
+        "title": "Internships & Part-time Jobs",
+        "organization": "including Media Markt, api GmbH, Dampfzebra",
+        "description": "Experience in retail, customer consulting, logistics, as well as technical support and software development."
+      }
+    ],
+    "educationItems": [
+      {
+        "year": "Since 2025",
+        "title": "Master of Arts",
+        "organization": "RWTH Aachen",
+        "description": "Cognitive, Digital and Empirical English Studies"
+      },
+      {
+        "year": "2024 - 2025",
+        "title": "Master of Education",
+        "organization": "RWTH Aachen",
+        "description": "Teaching degree for high and comprehensive schools (English and Technology)"
+      },
+      {
+        "year": "2019 – 2024",
+        "title": "Bachelor of Arts",
+        "organization": "RWTH Aachen",
+        "description": "Teaching degree for high and comprehensive schools (English and Technology)"
+      },
+      {
+        "year": "2010 – 2018",
+        "title": "High School Diploma",
+        "organization": "Gymnasium Baesweiler",
+        "description": "Graduation with focus on natural sciences and languages."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Ready to work?",
+    "subtitle": [
+      "Feel free to contact me via email using the contact form or by phone.",
+      "Anytime!"
+    ],
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "subject": "Subject",
+      "message": "Your Message",
+      "submit": "Send Message"
+    }
+  },
+  "footer": {
+    "copyright": "© {{year}} webCommits web Designs.",
+    "impressum": "Legal Notice",
+    "datenschutz": "Privacy Policy"
+  },
+  "legal": {
+    "backToHome": "← Back to Home"
+  }
+}

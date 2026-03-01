@@ -1,0 +1,184 @@
+{
+  "header": {
+    "start": "start",
+    "about": "über mich",
+    "portfolio": "portfolio",
+    "resume": "lebenslauf",
+    "contact": "kontakt"
+  },
+  "hero": {
+    "name": "lukas.",
+    "surname": "schaffrath",
+    "subtitle": [
+      "Web Developer & Designer",
+      "IT Administrator",
+      "Lehrer für Gymnasien & Gesamtschulen",
+      "CDE Student"
+    ]
+  },
+  "about": {
+    "title": "Über Mich",
+    "paragraphs": [
+      "Ich bin Lukas Schaffrath – Webentwickler mit technischem Lehramtsabschluss der RWTH Aachen und einer Leidenschaft für digitale Lösungen. Was einst als studentischer Nebenjob begann, wurde zur Berufung: der Entwicklung moderner, leistungsstarker und bezahlbarer Websites.",
+      "Während meines Studiums war ich als Webentwickler und wissenschaftliche Hilfskraft an der RWTH tätig. Heute betreue ich als IT-Administrator verschiedene technische Projekte am Institut für Anglistik und arbeite parallel selbstständig an Webprojekten unter dem Namen webCommits web Designs.",
+      "Ich setze auf nachhaltigen, sauberen Code und nutzerfreundliche Konzepte. Ob mit klassischen Webtechnologien wie HTML, CSS, JavaScript oder Frameworks wie Django, Ruby on Rails, Eleventy und Symfony. Besonders gerne unterstütze ich kleinere Unternehmen mit individuellen Lösungen. Mein technisches Know-how kombiniere ich mit pädagogischem Feingefühl und klarer Kommunikation. Denn gute Webentwicklung beginnt mit dem Verständnis für die Menschen dahinter."
+    ]
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "projectLink": "Projekt ansehen →",
+    "projects": {
+      "webcommits": {
+        "title": "webCommits",
+        "description": "Die Seite der besten Webentwickler.",
+        "technologies": ["HTML", "CSS", "JavaScript"]
+      },
+      "gpupgrade": {
+        "title": "GPUpgrade",
+        "description": "Web-Tool zur Analyse und zum Vergleich von GPU-Leistungen mit Upgrade-Kalkulator, Such- und Filterfunktionen. Entwickelt mit Eleventy (11ty), AlpineJS, JavaScript und JSON-Datenbasis von u/SenorPeterz.",
+        "technologies": ["Eleventy", "AlpineJS", "JavaScript", "JSON"]
+      },
+      "anglistikweb": {
+        "title": "Anglistik Web",
+        "description": "Sprechstunden- und Buchungssystem mit Login und Account-Verwaltung. Basierend auf Django und Python.",
+        "technologies": ["Django", "Python", "HTMX", "HTML/CSS"]
+      },
+      "portfolio": {
+        "title": "Portfolio Website",
+        "description": "Meine persönliche Portfolio-Website, die meine Projekte und Fähigkeiten präsentiert. Entwickelt mit React, GSAP für Animationen und einem modernen, responsiven Design. Überzeugen Sie sich auf Github per Click auf den Link! (Branch: redesign)",
+        "technologies": ["React", "GSAP", "CSS", "HTML"]
+      },
+      "clweb": {
+        "title": "CL-Verkehrstechnik",
+        "description": "Verkehrszeichenpläne und -technik. Klar, präzise, deutschlandweit, in reinem Vanilla Code.",
+        "technologies": ["HTML", "Vanilla CSS", "Vanilla JavaScript"]
+      },
+      "lashesbydim": {
+        "title": "Lashes by Dim",
+        "description": "Interaktive Website für eine Wimpernstylistin",
+        "technologies": ["HTML", "Vanilla CSS", "Vanilla JavaScript"]
+      },
+      "benbachmair": {
+        "title": "Ben-Bachmair",
+        "description": "Website eines international renommierten Professors & Autors, basierend auf Vue.js.",
+        "technologies": ["Vue.js", "JavaScript"]
+      },
+      "kernbohrungen": {
+        "title": "Kernbohrungen Günther",
+        "description": "Website eines Meisterbetriebs im Mauerwerks- und Betonbau, aufgebaut mit Eleventy und Nunjucks.",
+        "technologies": ["Eleventy", "Nunjucks", "HTML/CSS"]
+      },
+      "anzeigeschalten": {
+        "title": "AnzeigeSchalten",
+        "description": "Eine Website, die den Prozess des Anzeigens vereinfachen soll. Speziell für die Großeltern als PWA erstellt.",
+        "technologies": ["PWA", "HTML", "CSS", "JavaScript"]
+      },
+      "mdtopdf": {
+        "title": "MD to HTML/PDF Converter",
+        "description": "Eine GUI Python-App, die Markdown-Dateien in HTML oder PDF umwandelt. Erstellt mit Tkinter und Pandoc. Mit Merge- und Export-Funktionalität für mehrere Dateien.",
+        "technologies": ["Python", "PythonTKinter", "Pandoc", "GUI"]
+      },
+      "notion": {
+        "title": "Notion to Obsidian Transition Tool",
+        "description": "Ein kleines Script, dass bei der Transition von Notion to Obsidian hilft, durch schlaue Dateikonvertierung.",
+        "technologies": ["Python", "Bash", "Script"]
+      },
+      "snakegame": {
+        "title": "Snake Game",
+        "description": "Ein einfacher Snake-Klon, geschrieben in Python mit PyGame. Erstellt als self-study Programmier-Projekt im Zuge eines Lehrgangs in der Technikdidaktik.",
+        "technologies": ["Python", "PyGame"]
+      }
+    }
+  },
+  "resume": {
+    "title": "Lebenslauf & Qualifikationen",
+    "experience": "berufserfahrung",
+    "education": "ausbildung",
+    "experienceItems": [
+      {
+        "year": "Seit 05/2025",
+        "title": "Freiberuflicher Webentwickler",
+        "organization": "webCommits web Designs",
+        "description": "Freiberufliche Full-Stack Webentwicklung unter Verwendung verschiedener moderner Technologien unter dem Namen webCommits web Designs."
+      },
+      {
+        "year": "Seit 10/2023",
+        "title": "IT-Administrator",
+        "organization": "Institut für Anglistik, Amerikanistik und Romanistik, RWTH Aachen",
+        "description": "Unterstützung bei IT-Infrastruktur, Netzwerkpflege und technischen Anliegen des Instituts, sowie Full-Stack Webentwicklung."
+      },
+      {
+        "year": "11/2024 - 02/2025",
+        "title": "Projektmanager (Werkstudent)",
+        "organization": "Promedia Maassen",
+        "description": "Materialerstellung (Unterrichtsmaterialien), Mitarbeit an NetRace Aachen/Netrace Kiel, IT-Support und Weiterentwicklung der Website."
+      },
+      {
+        "year": "02/2020 - 10/2024",
+        "title": "Nachhilfelehrer",
+        "organization": "Schülerhilfe, Geilenkirchen",
+        "description": "Nachhilfe in Englisch, Deutsch und Informatik für Schüler:innen verschiedener Jahrgangsstufen und Berufsschüler."
+      },
+      {
+        "year": "12/2022 – 10/2023",
+        "title": "Wissenschaftliche Hilfskraft",
+        "organization": "Institut für Anglistik, Amerikanistik und Romanistik, RWTH Aachen",
+        "description": "Entwicklung des Webbasierten Self-Study Kurses \"Virtual Acoustic Immersion for Advanced Bachelor's Students of English\"."
+      },
+      {
+        "year": "2016 – 2019",
+        "title": "Praktika & Nebenjobs",
+        "organization": "u.a. Media Markt, api GmbH, Dampfzebra",
+        "description": "Erfahrung im Einzelhandel, Kundenberatung, Logistik sowie technische Unterstützung und Software Entwicklung."
+      }
+    ],
+    "educationItems": [
+      {
+        "year": "Seit 2025",
+        "title": "Master of Arts",
+        "organization": "RWTH Aachen",
+        "description": "Cognitive, Digital and Empirical English Studies"
+      },
+      {
+        "year": "2024 - 2025",
+        "title": "Master of Education",
+        "organization": "RWTH Aachen",
+        "description": "Lehramt für Gymnasien und Gesamtschulen (Englisch und Technik)"
+      },
+      {
+        "year": "2019 – 2024",
+        "title": "Bachelor of Arts",
+        "organization": "RWTH Aachen",
+        "description": "Lehramt an Gymnasien und Gesamtschulen (Englisch und Technik)"
+      },
+      {
+        "year": "2010 – 2018",
+        "title": "Allgemeine Hochschulreife",
+        "organization": "Gymnasium Baesweiler",
+        "description": "Abschluss mit Schwerpunkt auf naturwissenschaftlichen und sprachlichen Fächern."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Bereit zu arbeiten?",
+    "subtitle": [
+      "Melden Sie sich gerne per Mail über mein Kontaktformular oder per Telefon.",
+      "Jederzeit!"
+    ],
+    "form": {
+      "name": "Ihr Name",
+      "email": "Ihre E-Mail",
+      "subject": "Betreff",
+      "message": "Ihre Nachricht",
+      "submit": "Nachricht senden"
+    }
+  },
+  "footer": {
+    "copyright": "© {{year}} webCommits web Designs.",
+    "impressum": "Impressum",
+    "datenschutz": "Datenschutz"
+  },
+  "legal": {
+    "backToHome": "← Zurück zur Startseite"
+  }
+}

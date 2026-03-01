@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './Portfolio.css';
@@ -7,133 +8,46 @@ gsap.registerPlugin(ScrollTrigger);
 
 interface Project {
   id: number;
-  title: string;
-  description: string;
-  technologies: string[];
+  key: string;
   link: string;
   image: string;
 }
 
 const Portfolio: React.FC = () => {
+  const { t } = useTranslation();
   const portfolioRef = useRef<HTMLElement>(null);
   const [currentProject, setCurrentProject] = useState(0);
   const backgroundRef = useRef<HTMLDivElement>(null);
 
   const projects: Project[] = [
-    {
-      id: 1,
-      title: 'webCommits',
-      description: 'Die Seite der besten Webentwickler.',
-      technologies: ['HTML', 'CSS', 'JavaScript'],
-      link: 'https://www.webcommits.info',
-      image: '/webcommits.webp',
-    },
-    {
-      id: 2,
-      title: 'GPUpgrade',
-      description: 'Web-Tool zur Analyse und zum Vergleich von GPU-Leistungen mit Upgrade-Kalkulator, Such- und Filterfunktionen. Entwickelt mit Eleventy (11ty), AlpineJS, JavaScript und JSON-Datenbasis von u/SenorPeterz.',
-      technologies: ['Eleventy', 'AlpineJS', 'JavaScript', 'JSON'],
-      link: 'https://webcommits.github.io/gpupgrade/',
-      image: '/gpupgrade.webp',
-    },
-    {
-      id: 3,
-      title: 'Anglistik Web',
-      description: 'Sprechstunden- und Buchungssystem mit Login und Account-Verwaltung. Basierend auf Django und Python.',
-      technologies: ['Django', 'Python', 'HTMX', 'HTML/CSS'],
-      link: 'https://web.anglistik.rwth-aachen.de',
-      image: '/anglistikweb.webp',
-    },
-    {
-      id: 4,
-      title: 'Portfolio Website',
-      description: 'Meine persönliche Portfolio-Website, die meine Projekte und Fähigkeiten präsentiert. Entwickelt mit React, GSAP für Animationen und einem modernen, responsiven Design. Überzeugen Sie sich auf Github per Click auf den Link! (Branch: redesign)',
-      technologies: ['React', 'GSAP', 'CSS', 'HTML'],
-      link: 'https://github.com/webCommits/portfolio',
-      image: '/portfolio.webp',
-    },
-    {
-      id: 5,
-      title: 'CL-Verkehrstechnik',
-      description: 'Verkehrszeichenpläne und -technik. Klar, präzise, deutschlandweit, in reinem Vanilla Code.',
-      technologies: ['HTML', 'Vanilla CSS', 'Vanilla JavaScript'],
-      link: 'https://www.cl-verkehrstechnik.de/',
-      image: '/clweb.webp',
-    },
-    {
-      id: 6,
-      title: 'Lashes by Dim',
-      description: 'Interaktive Website für eine Wimpernstylistin',
-      technologies: ['HTML', 'Vanilla CSS', 'Vanilla JavaScript'],
-      link: 'https://lashesbydim.de/',
-      image: '/lashesbydim.webp',
-    },
-    {
-      id: 7,
-      title: 'Ben-Bachmair',
-      description: 'Website eines international renommierten Professors & Autors, basierend auf Vue.js.',
-      technologies: ['Vue.js', 'JavaScript'],
-      link: 'http://ben-bachmair.de/',
-      image: '/benbachmair.webp',
-    },
-    {
-      id: 8,
-      title: 'Kernbohrungen Günther',
-      description: 'Website eines Meisterbetriebs im Mauerwerks- und Betonbau, aufgebaut mit Eleventy und Nunjucks.',
-      technologies: ['Eleventy', 'Nunjucks', 'HTML/CSS'],
-      link: 'https://kernbohrungen-guenther.de/',
-      image: '/kernbohrungen-guenther.webp',
-    },
-    {
-      id: 9,
-      title: 'AnzeigeSchalten',
-      description: 'Eine Website, die den Prozess des Anzeigens vereinfachen soll. Speziell für die Großeltern als PWA erstellt.',
-      technologies: ['PWA', 'HTML', 'CSS', 'JavaScript'],
-      link: 'https://lstoneyy.github.io/anzeigeschalten/',
-      image: '/anzeigeschalten.webp',
-    },
-    {
-      id: 10,
-      title: 'MD to HTML/PDF Converter',
-      description: 'Eine GUI Python-App, die Markdown-Dateien in HTML oder PDF umwandelt. Erstellt mit Tkinter und Pandoc. Mit Merge- und Export-Funktionalität für mehrere Dateien.',
-      technologies: ['Python', 'PythonTKinter', 'Pandoc', 'GUI'],
-      link: 'https://github.com/LStoneyy/md-to-html-pdf',
-      image: '/mdtopdf.webp',
-    },
-    {
-      id: 11,
-      title: 'Notion to Obsidian Transition Tool',
-      description: 'Ein kleines Script, dass bei der Transition von Notion to Obsidian hilft, durch schlaue Dateikonvertierung.',
-      technologies: ['Python', 'Bash', 'Script'],
-      link: 'https://github.com/LStoneyy/notion-to-obsidian-py',
-      image: '/notion.webp',
-    },
-    {
-      id: 11,
-      title: 'Snake Game',
-      description: 'Ein einfacher Snake-Klon, geschrieben in Python mit PyGame. Erstellt als self-study Programmier-Projekt im Zuge eines Lehrgangs in der Technikdidaktik.',
-      technologies: ['Python', 'PyGame'],
-      link: 'https://github.com/LStoneyy/snake-game',
-      image: '/snakegame.webp',
-    },
+    { id: 1, key: 'webcommits', link: 'https://www.webcommits.info', image: '/webcommits.webp' },
+    { id: 2, key: 'gpupgrade', link: 'https://webcommits.github.io/gpupgrade/', image: '/gpupgrade.webp' },
+    { id: 3, key: 'anglistikweb', link: 'https://web.anglistik.rwth-aachen.de', image: '/anglistikweb.webp' },
+    { id: 4, key: 'portfolio', link: 'https://github.com/webCommits/portfolio', image: '/portfolio.webp' },
+    { id: 5, key: 'clweb', link: 'https://www.cl-verkehrstechnik.de/', image: '/clweb.webp' },
+    { id: 6, key: 'lashesbydim', link: 'https://lashesbydim.de/', image: '/lashesbydim.webp' },
+    { id: 7, key: 'benbachmair', link: 'http://ben-bachmair.de/', image: '/benbachmair.webp' },
+    { id: 8, key: 'kernbohrungen', link: 'https://kernbohrungen-guenther.de/', image: '/kernbohrungen-guenther.webp' },
+    { id: 9, key: 'anzeigeschalten', link: 'https://lstoneyy.github.io/anzeigeschalten/', image: '/anzeigeschalten.webp' },
+    { id: 10, key: 'mdtopdf', link: 'https://github.com/LStoneyy/md-to-html-pdf', image: '/mdtopdf.webp' },
+    { id: 11, key: 'notion', link: 'https://github.com/LStoneyy/notion-to-obsidian-py', image: '/notion.webp' },
+    { id: 12, key: 'snakegame', link: 'https://github.com/LStoneyy/snake-game', image: '/snakegame.webp' },
   ];
 
   const handleNext = () => {
-    // Animate out current project
     gsap.to('.portfolio-mockup', {
       x: -50,
       opacity: 0,
       duration: 0.3,
       onComplete: () => {
         setCurrentProject((prev) => (prev + 1) % projects.length);
-        // Animate in new project
         gsap.fromTo('.portfolio-mockup',
           { x: 50, opacity: 0 },
           { x: 0, opacity: 1, duration: 0.3 }
         );
       }
     });
-    
+
     gsap.to('.portfolio-details', {
       x: 50,
       opacity: 0,
@@ -148,21 +62,19 @@ const Portfolio: React.FC = () => {
   };
 
   const handlePrev = () => {
-    // Animate out current project
     gsap.to('.portfolio-mockup', {
       x: 50,
       opacity: 0,
       duration: 0.3,
       onComplete: () => {
         setCurrentProject((prev) => (prev - 1 + projects.length) % projects.length);
-        // Animate in new project
         gsap.fromTo('.portfolio-mockup',
           { x: -50, opacity: 0 },
           { x: 0, opacity: 1, duration: 0.3 }
         );
       }
     });
-    
+
     gsap.to('.portfolio-details', {
       x: -50,
       opacity: 0,
@@ -178,7 +90,6 @@ const Portfolio: React.FC = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Section entrance - fade and zoom in
       gsap.from(portfolioRef.current, {
         scrollTrigger: {
           trigger: portfolioRef.current,
@@ -223,7 +134,6 @@ const Portfolio: React.FC = () => {
         delay: 0.4,
       });
 
-      // Background floating shapes
       const shapes = backgroundRef.current?.querySelectorAll('.bg-shape');
       if (shapes) {
         shapes.forEach((shape) => {
@@ -243,6 +153,8 @@ const Portfolio: React.FC = () => {
     return () => ctx.revert();
   }, []);
 
+  const currentProjectKey = projects[currentProject].key;
+
   return (
     <section id="portfolio" className="portfolio theme-frappe" ref={portfolioRef}>
       <div className="portfolio-background" ref={backgroundRef}>
@@ -253,16 +165,16 @@ const Portfolio: React.FC = () => {
         <div className="bg-shape shape-5"></div>
       </div>
       <div className="portfolio-container">
-        <h2 className="portfolio-title">Portfolio</h2>
+        <h2 className="portfolio-title">{t('portfolio.title')}</h2>
         <div className="portfolio-content">
           <div className="portfolio-left">
             <div className="portfolio-mockup">
               <div className="mockup-frame">
                 <div className="mockup-screen">
                   <div className="project-image-placeholder">
-                    <img 
-                      src={projects[currentProject].image} 
-                      alt={projects[currentProject].title}
+                    <img
+                      src={projects[currentProject].image}
+                      alt={t(`portfolio.projects.${currentProjectKey}.title`)}
                       style={{ width: '100%', height: '100%', objectFit: 'fill' }}
                     />
                   </div>
@@ -283,22 +195,22 @@ const Portfolio: React.FC = () => {
           </div>
           <div className="portfolio-right">
             <div className="portfolio-details">
-              <h3 className="project-title">{projects[currentProject].title}</h3>
-              <p className="project-description">{projects[currentProject].description}</p>
+              <h3 className="project-title">{t(`portfolio.projects.${currentProjectKey}.title`)}</h3>
+              <p className="project-description">{t(`portfolio.projects.${currentProjectKey}.description`)}</p>
               <div className="project-technologies">
-                {projects[currentProject].technologies.map((tech, index) => (
+                {(t(`portfolio.projects.${currentProjectKey}.technologies`, { returnObjects: true }) as string[]).map((tech, index) => (
                   <span key={index} className="tech-tag">
                     {tech}
                   </span>
                 ))}
               </div>
-              <a 
-                href={projects[currentProject].link} 
+              <a
+                href={projects[currentProject].link}
                 className="project-link"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Projekt ansehen →
+                {t('portfolio.projectLink')}
               </a>
             </div>
           </div>

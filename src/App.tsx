@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import './i18n';
 import Loading from './components/Loading/Loading';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
