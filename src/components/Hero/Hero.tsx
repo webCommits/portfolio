@@ -111,7 +111,7 @@ const Hero: React.FC = () => {
         </div>
         <div className="hero-image" ref={imageRef}>
           <div className="image-placeholder">
-            <img src="/portrait.jpg" alt="Lukas Schaffrath" />
+            <img src="/portrait.webp" alt="Lukas Schaffrath" />
           </div>
         </div>
       </div>

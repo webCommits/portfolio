@@ -26,7 +26,7 @@ const Portfolio: React.FC = () => {
       description: 'Die Seite der besten Webentwickler.',
       technologies: ['HTML', 'CSS', 'JavaScript'],
       link: 'https://www.webcommits.info',
-      image: '/webcommits.png',
+      image: '/webcommits.webp',
     },
     {
       id: 2,
@@ -34,7 +34,7 @@ const Portfolio: React.FC = () => {
       description: 'Web-Tool zur Analyse und zum Vergleich von GPU-Leistungen mit Upgrade-Kalkulator, Such- und Filterfunktionen. Entwickelt mit Eleventy (11ty), AlpineJS, JavaScript und JSON-Datenbasis von u/SenorPeterz.',
       technologies: ['Eleventy', 'AlpineJS', 'JavaScript', 'JSON'],
       link: 'https://webcommits.github.io/gpupgrade/',
-      image: '/gpupgrade.png',
+      image: '/gpupgrade.webp',
     },
     {
       id: 3,
@@ -42,7 +42,7 @@ const Portfolio: React.FC = () => {
       description: 'Sprechstunden- und Buchungssystem mit Login und Account-Verwaltung. Basierend auf Django und Python.',
       technologies: ['Django', 'Python', 'HTMX', 'HTML/CSS'],
       link: 'https://web.anglistik.rwth-aachen.de',
-      image: '/anglistikweb.png',
+      image: '/anglistikweb.webp',
     },
     {
       id: 4,
@@ -50,7 +50,7 @@ const Portfolio: React.FC = () => {
       description: 'Meine persönliche Portfolio-Website, die meine Projekte und Fähigkeiten präsentiert. Entwickelt mit React, GSAP für Animationen und einem modernen, responsiven Design. Überzeugen Sie sich auf Github per Click auf den Link! (Branch: redesign)',
       technologies: ['React', 'GSAP', 'CSS', 'HTML'],
       link: 'https://github.com/webCommits/portfolio',
-      image: '/portfolio.png',
+      image: '/portfolio.webp',
     },
     {
       id: 5,
@@ -58,7 +58,7 @@ const Portfolio: React.FC = () => {
       description: 'Verkehrszeichenpläne und -technik. Klar, präzise, deutschlandweit, in reinem Vanilla Code.',
       technologies: ['HTML', 'Vanilla CSS', 'Vanilla JavaScript'],
       link: 'https://www.cl-verkehrstechnik.de/',
-      image: '/clweb.png',
+      image: '/clweb.webp',
     },
     {
       id: 6,
@@ -66,7 +66,7 @@ const Portfolio: React.FC = () => {
       description: 'Interaktive Website für eine Wimpernstylistin',
       technologies: ['HTML', 'Vanilla CSS', 'Vanilla JavaScript'],
       link: 'https://lashesbydim.de/',
-      image: '/lashesbydim.png',
+      image: '/lashesbydim.webp',
     },
     {
       id: 7,
@@ -74,7 +74,7 @@ const Portfolio: React.FC = () => {
       description: 'Website eines international renommierten Professors & Autors, basierend auf Vue.js.',
       technologies: ['Vue.js', 'JavaScript'],
       link: 'http://ben-bachmair.de/',
-      image: '/benbachmair.png',
+      image: '/benbachmair.webp',
     },
     {
       id: 8,
@@ -82,7 +82,7 @@ const Portfolio: React.FC = () => {
       description: 'Website eines Meisterbetriebs im Mauerwerks- und Betonbau, aufgebaut mit Eleventy und Nunjucks.',
       technologies: ['Eleventy', 'Nunjucks', 'HTML/CSS'],
       link: 'https://kernbohrungen-guenther.de/',
-      image: '/kernbohrungen-guenther.png',
+      image: '/kernbohrungen-guenther.webp',
     },
     {
       id: 9,
@@ -90,7 +90,7 @@ const Portfolio: React.FC = () => {
       description: 'Eine Website, die den Prozess des Anzeigens vereinfachen soll. Speziell für die Großeltern als PWA erstellt.',
       technologies: ['PWA', 'HTML', 'CSS', 'JavaScript'],
       link: 'https://lstoneyy.github.io/anzeigeschalten/',
-      image: '/anzeigeschalten.png',
+      image: '/anzeigeschalten.webp',
     },
     {
       id: 10,
@@ -98,7 +98,7 @@ const Portfolio: React.FC = () => {
       description: 'Eine GUI Python-App, die Markdown-Dateien in HTML oder PDF umwandelt. Erstellt mit Tkinter und Pandoc. Mit Merge- und Export-Funktionalität für mehrere Dateien.',
       technologies: ['Python', 'PythonTKinter', 'Pandoc', 'GUI'],
       link: 'https://github.com/LStoneyy/md-to-html-pdf',
-      image: '/mdtopdf.png',
+      image: '/mdtopdf.webp',
     },
     {
       id: 11,
@@ -106,7 +106,7 @@ const Portfolio: React.FC = () => {
       description: 'Ein kleines Script, dass bei der Transition von Notion to Obsidian hilft, durch schlaue Dateikonvertierung.',
       technologies: ['Python', 'Bash', 'Script'],
       link: 'https://github.com/LStoneyy/notion-to-obsidian-py',
-      image: '/notion.png',
+      image: '/notion.webp',
     },
     {
       id: 11,
@@ -114,7 +114,7 @@ const Portfolio: React.FC = () => {
       description: 'Ein einfacher Snake-Klon, geschrieben in Python mit PyGame. Erstellt als self-study Programmier-Projekt im Zuge eines Lehrgangs in der Technikdidaktik.',
       technologies: ['Python', 'PyGame'],
       link: 'https://github.com/LStoneyy/snake-game',
-      image: '/snakegame.png',
+      image: '/snakegame.webp',
     },
   ];
 

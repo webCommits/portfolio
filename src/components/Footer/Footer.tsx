@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
     <footer className="footer theme-latte">
       <div className="footer-container">
         <div className="footer-brand">
-            <img src="/webCommits-logo.png" alt="webCommits Logo" />
+            <img src="/webCommits-logo.webp" alt="webCommits Logo" />
         </div>
         <div className="footer-social">
           <a href="https://github.com/LStoneyy" className="social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">

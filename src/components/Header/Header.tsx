@@ -39,7 +39,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
       >
         <div className="header-container">
           <div className="logo" onClick={() => scrollToSection('hero')}>
-            <span className="logo-name"><img src="/Logo.png" alt="Logo" /></span>
+            <span className="logo-name"><img src="/Logo.webp" alt="Logo" /></span>
           </div>
           <nav className="nav-menu">
             <a 
