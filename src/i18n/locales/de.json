@@ -28,6 +28,11 @@
     "title": "Portfolio",
     "projectLink": "Projekt ansehen →",
     "projects": {
+      "trackable": {
+        "title": "trackable.",
+        "description": "Self-hosted Zeiterfassungs-PWA für Freelancer und kleine Teams. Mit mehreren Profilen, monatlichen PDF/CSV-Exporten, Urlaubsverwaltung und automatischen E-Mail-Berichten.",
+        "technologies": ["Django", "Python", "PWA", "SQLite", "Docker"]
+      },
       "webcommits": {
         "title": "webCommits",
         "description": "Die Seite der besten Webentwickler.",
