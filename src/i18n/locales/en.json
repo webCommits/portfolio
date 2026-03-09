@@ -53,6 +53,11 @@
         "description": "My personal portfolio website showcasing my projects and skills. Built with React, GSAP for animations, and a modern, responsive design. Check it out on GitHub! (Branch: redesign)",
         "technologies": ["React", "GSAP", "CSS", "HTML"]
       },
+      "spotifydl": {
+        "title": "Spotify Playlist Downloader",
+        "description": "Self-hosted Docker service to download Spotify playlists as MP3. Responsive web UI, automatic playlist monitoring, CSV import, and Spotify OAuth integration. Uses yt-dlp for downloads and FastAPI in the backend.",
+        "technologies": ["Docker", "FastAPI", "React", "yt-dlp", "Python"]
+      },
       "clweb": {
         "title": "CL-Verkehrstechnik",
         "description": "Traffic sign plans and technology. Clear, precise, nationwide, in pure vanilla code.",
