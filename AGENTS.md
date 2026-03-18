@@ -4,7 +4,7 @@ Guidelines for AI coding agents working in this codebase.
 
 ## Project Overview
 
-Personal portfolio website built with React 19, TypeScript, and GSAP animations. Uses Catppuccin theme system with progressive color transitions on scroll. German/English internationalization via i18next.
+Personal portfolio website built with React 19, TypeScript, and GSAP animations. Uses Catppuccin theme system with progressive color transitions on scroll. Focuses on high-end, modern UI/UX with "Bento Box" layouts, interactive mouse-reactive elements, and 3D parallax GSAP effects. German/English internationalization via i18next. SEO-optimized and deployed to GitHub Pages.
 
 ## Build/Lint/Test Commands
 
@@ -113,7 +113,12 @@ Catppuccin color palette with four theme variants applied via CSS classes:
 - `.theme-macchiato` - Dark
 - `.theme-mocha` - Darkest
 
-Access colors via CSS variables: `var(--bg)`, `var(--text)`, `var(--surface1)`
+Access colors via CSS variables: `var(--base)`, `var(--text)`, `var(--surface1)`, `var(--mauve)`, `var(--sky)`, etc.
+
+*Advanced Styling:* Use CSS `color-mix` with CSS variables for dynamic themes: 
+`color-mix(in srgb, var(--item-color) 20%, transparent)`
+Use inline styles for dynamic component custom properties:
+`style={{ '--item-color': group.color } as React.CSSProperties}`
 
 ### i18n Usage
 
@@ -147,7 +152,19 @@ Extends `react-app` and `react-app/jest` presets. No Prettier config present.
 
 1. **ScrollTrigger entrance:** `gsap.from(elementRef.current, { scrollTrigger: {...}, y: 50, opacity: 0, duration: 1 });`
 2. **Timeline:** `const tl = gsap.timeline({ defaults: { ease: 'power3.out' } }); tl.from(el1, {...}).from(el2, {...}, '-=0.7');`
-3. **Floating:** `gsap.to(element, { y: -20, duration: 2, repeat: -1, yoyo: true, ease: 'sine.inOut' });`
+3. **Floating:** `gsap.to(element, { y: 'random(-80, 80)', duration: 'random(10, 15)', repeat: -1, yoyo: true, ease: 'sine.inOut' });`
+4. **High-Performance Mouse Tracking:** Use `gsap.quickTo()` for mouse/cursor followers.
+```typescript
+const xTo = gsap.quickTo(el, "x", { duration: 0.5, ease: "power3.out" });
+window.addEventListener('mousemove', (e) => xTo(e.clientX));
+```
+5. **Device Optimization:** Use `window.matchMedia("(pointer: fine)").matches` to restrict intensive mouse/hover 3D animations (`rotationX/Y`) to desktop, and implement ScrollTrigger fallback proxies for mobile UI (Touch sweeps).
+
+### Form Integration
+Contact section uses FormSubmit. Do NOT use custom React Router success routes (e.g., `/danke`). Just point `<form action="...">` and let FormSubmit handle the default success flow locally.
+
+### SEO & Web Vitals
+When generating pages, maintain strict HTML5 semantic standards. Meta-tags, JSON-LD Schema, and WebManifest are actively managed in `public/index.html`. 
 
 ### Testing
 
