@@ -38,6 +38,11 @@
         "description": "Die Seite der besten Webentwickler.",
         "technologies": ["HTML", "CSS", "JavaScript"]
       },
+      "rueckenwind": {
+        "title": "Rückenwind Reise",
+        "description": "Eine Übersichtsseite als Linktree-Ersatz für unsere Lieblings-YouTuber — inklusive Login, Admin-Panel, interaktiver UI und Animationen.",
+        "technologies": ["Python", "Django", "Docker-Compose", "Tailwind"]
+      },
       "gpupgrade": {
         "title": "GPUpgrade",
         "description": "Web-Tool zur Analyse und zum Vergleich von GPU-Leistungen mit Upgrade-Kalkulator, Such- und Filterfunktionen. Entwickelt mit Eleventy (11ty), AlpineJS, JavaScript und JSON-Datenbasis von u/SenorPeterz.",

@@ -8,29 +8,34 @@ gsap.registerPlugin(ScrollTrigger);
 
 const techStack = [
   {
-    category: "Frontend",
-    color: "var(--sky)",
-    skills: ["React", "TypeScript", "JavaScript", "HTML5", "CSS3", "GSAP"]
-  },
-  {
-    category: "Backend",
+    id: "backend",
+    title: "Backend & Databases",
     color: "var(--peach)",
-    skills: ["Python", "Django", "Ruby", "Rails", "Java", "Node.js"]
+    skills: ["Python (uv/poetry)", "Django", "FastAPI", "Node.js", "Ruby on Rails", "PostgreSQL", "Supabase", "SQLite", "PHP/Symfony", "Shopware/Moodle"]
   },
   {
-    category: "DevOps",
+    id: "frontend",
+    title: "Frontend & UI",
+    color: "var(--sky)",
+    skills: ["React", "TypeScript", "Vue", "Tailwind", "HTMX", "AlpineJS", "Three.js", "GSAP", "Vite", "PWA", "Eleventy"]
+  },
+  {
+    id: "devops",
+    title: "DevOps & Infra",
     color: "var(--mauve)",
-    skills: ["Docker", "Git", "ShopWare", "Moodle", "Symfony"]
+    skills: ["Docker & Compose", "Linux/Unix & Bash", "CI/CD & Actions", "Traefik", "Coolify", "Firewalls", "Git", "Neovim/tmux"]
   },
   {
-    category: "Design",
+    id: "design",
+    title: "Design",
     color: "var(--green)",
-    skills: ["Premiere Pro", "InDesign", "Affinity", "Gimp", "DaVinci"]
+    skills: ["Figma", "Adobe Suite", "Affinity", "DaVinci Resolve", "Gimp/Inkscape"]
   },
   {
-    category: "Engineering",
+    id: "engineering",
+    title: "Data, Apps & 3D Engineering",
     color: "var(--yellow)",
-    skills: ["NX", "Fusion 360", "FL Studio"]
+    skills: ["Data Science (R/Py)", "Matplotlib", "Pandoc", "Tkinter", "PyGame", "Gaussian Splatting", "SparkJS", "NX", "Fusion 360"]
   }
 ];
 
@@ -238,11 +243,11 @@ const About: React.FC = () => {
             {techStack.map((group, index) => (
               <div 
                 key={index} 
-                className={`bento-item bento-item-${group.category.toLowerCase()}`}
+                className={`bento-item bento-item-${group.id}`}
                 style={{ '--item-color': group.color } as React.CSSProperties}
               >
                 <div className="bento-inner">
-                  <h3 style={{ color: group.color }}>{group.category}</h3>
+                  <h3 style={{ color: group.color }}>{group.title}</h3>
                   <div className="skills-list">
                     {group.skills.map((skill, sIndex) => (
                       <span key={sIndex} className="skill-tag">{skill}</span>

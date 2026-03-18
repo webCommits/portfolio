@@ -160,22 +160,22 @@
 
 /* Explicit perfect grid layout sizes */
 .bento-item-frontend {
-  grid-column: span 2;
+  grid-column: span 1;
   grid-row: span 2;
 }
 
 .bento-item-backend {
-  grid-column: span 1;
+  grid-column: span 2;
   grid-row: span 2;
 }
 
 .bento-item-devops {
-  grid-column: span 1;
+  grid-column: span 2;
   grid-row: span 1;
 }
 
 .bento-item-design {
-  grid-column: span 2;
+  grid-column: span 1;
   grid-row: span 1;
 }
 

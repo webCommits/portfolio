@@ -38,6 +38,11 @@
         "description": "The website of the best web developers.",
         "technologies": ["HTML", "CSS", "JavaScript"]
       },
+      "rueckenwind": {
+        "title": "Rückenwind Reise",
+        "description": "An overview page with a Linktree replacement for our favourite YouTubers — includes login, admin panel, interactive UI, and animations.",
+        "technologies": ["Python", "Django", "Docker-Compose", "Tailwind"]
+      },
       "gpupgrade": {
         "title": "GPUpgrade",
         "description": "Web tool for analyzing and comparing GPU performance with upgrade calculator, search, and filter functions. Built with Eleventy (11ty), AlpineJS, JavaScript, and JSON database by u/SenorPeterz.",
