@@ -1,0 +1,95 @@
+/* Global Custom Cursor - Catppuccin Theme */
+html {
+  cursor: none !important;
+}
+
+body {
+  cursor: none !important;
+}
+
+/* Hide native cursor on all interactive elements */
+a, button, input, textarea, [role="button"], label, select, [type="submit"], [type="button"] {
+  cursor: none !important;
+}
+
+.custom-cursor-dot,
+.custom-cursor-ring,
+.cursor-link-icon {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+}
+
+.custom-cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--sky, #89dceb);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--sky, #89dceb), 0 0 20px rgba(137, 220, 235, 0.4);
+  mix-blend-mode: difference;
+}
+
+.custom-cursor-ring {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--surface1, #51576d);
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(137, 220, 235, 0.15);
+  mix-blend-mode: difference;
+}
+
+.custom-cursor-dot.hovering {
+  width: 12px;
+  height: 12px;
+  background: var(--lavender, #babbf1);
+  box-shadow: 0 0 15px var(--lavender, #babbf1), 0 0 30px rgba(114, 135, 253, 0.5);
+}
+
+.custom-cursor-ring.hovering {
+  width: 55px;
+  height: 55px;
+  border-color: var(--lavender, #babbf1);
+}
+
+.cursor-link-icon {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--sky, #89dceb);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  pointer-events: none;
+  position: fixed;
+  text-shadow: 0 0 8px var(--sky, #89dceb);
+}
+
+.cursor-link-icon.visible {
+  opacity: 1;
+}
+
+/* Fallback for touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .custom-cursor-dot,
+  .custom-cursor-ring,
+  .cursor-link-icon {
+    display: none !important;
+  }
+  
+  html, body {
+    cursor: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-cursor-dot,
+  .custom-cursor-ring,
+  .cursor-link-icon {
+    display: none !important;
+  }
+  
+  html, body {
+    cursor: auto;
+  }
+}

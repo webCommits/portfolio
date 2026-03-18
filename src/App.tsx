@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './i18n';
 import Loading from './components/Loading/Loading';
+import CustomCursor from './components/CustomCursor/CustomCursor';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
 import About from './components/About/About';
@@ -47,6 +48,7 @@ function HomePage() {
 
   return (
     <>
+      <CustomCursor />
       <Loading />
       <Header activeSection={activeSection} />
       <FloatingButtons />

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -9,30 +9,39 @@ gsap.registerPlugin(ScrollTrigger);
 const Contact: React.FC = () => {
   const { t } = useTranslation();
   const contactRef = useRef<HTMLElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const [typedTitle, setTypedTitle] = useState('');
+  const [showCursor, setShowCursor] = useState(true);
+  const hasAnimatedRef = useRef(false);
+
+  const performTypewriter = useCallback(() => {
+    const title = t('contact.title');
+    let currentIndex = 0;
+    
+    const typeInterval = setInterval(() => {
+      if (currentIndex < title.length) {
+        setTypedTitle(title.substring(0, currentIndex + 1));
+        currentIndex++;
+      } else {
+        clearInterval(typeInterval);
+        setTimeout(() => setShowCursor(false), 600);
+      }
+    }, 70);
+  }, [t]);
 
   useEffect(() => {
+    if (hasAnimatedRef.current) return;
+    
     const ctx = gsap.context(() => {
-      gsap.from(contactRef.current, {
-        scrollTrigger: {
-          trigger: contactRef.current,
-          start: 'top 80%',
-          end: 'top 50%',
-          scrub: 1,
+      ScrollTrigger.create({
+        trigger: contactRef.current,
+        start: 'top 70%',
+        onEnter: () => {
+          if (!hasAnimatedRef.current) {
+            hasAnimatedRef.current = true;
+            performTypewriter();
+          }
         },
-        scale: 0.5,
-        rotation: 180,
-        opacity: 0,
-      });
-
-      gsap.from('.contact-title', {
-        scrollTrigger: {
-          trigger: contactRef.current,
-          start: 'top 60%',
-        },
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        ease: 'back.out(2)',
       });
 
       gsap.from('.contact-subtitle', {
@@ -43,7 +52,7 @@ const Contact: React.FC = () => {
         y: 30,
         opacity: 0,
         duration: 1,
-        delay: 0.2,
+        delay: 1.5,
       });
 
       gsap.from('.contact-form', {
@@ -54,17 +63,32 @@ const Contact: React.FC = () => {
         y: 50,
         opacity: 0,
         duration: 1,
-        delay: 0.4,
+        delay: 1.8,
+      });
+
+      gsap.from('.form-group', {
+        scrollTrigger: {
+          trigger: contactRef.current,
+          start: 'top 60%',
+        },
+        y: 20,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.1,
+        delay: 2,
       });
     }, contactRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [performTypewriter]);
 
   return (
     <section id="contact" className="contact theme-mocha" ref={contactRef}>
       <div className="contact-container">
-        <h2 className="contact-title">{t('contact.title')}</h2>
+        <h2 className="contact-title" ref={titleRef}>
+          {typedTitle}
+          <span className={`typewriter-cursor ${showCursor ? 'visible' : ''}`}>|</span>
+        </h2>
         <p className="contact-subtitle">
           {t('contact.subtitle.0')}
           <br />

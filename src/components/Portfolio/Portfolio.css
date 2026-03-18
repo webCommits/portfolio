@@ -22,51 +22,70 @@
 
 .bg-shape {
   position: absolute;
-  opacity: 0.03;
+  opacity: 0.06;
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
   background: var(--sky);
-  will-change: transform;
+  will-change: transform, opacity;
+  transition: background 0.5s ease, opacity 0.3s ease;
 }
 
 .shape-1 {
-  width: 400px;
-  height: 400px;
-  top: 10%;
-  left: 5%;
+  width: 450px;
+  height: 450px;
+  top: 5%;
+  left: 3%;
   background: var(--blue);
 }
 
 .shape-2 {
-  width: 300px;
-  height: 300px;
-  top: 60%;
-  right: 10%;
-  background: var(--sapphire);
+  width: 350px;
+  height: 350px;
+  top: 55%;
+  right: 8%;
+  background: var(--lavender);
 }
 
 .shape-3 {
-  width: 250px;
-  height: 250px;
-  bottom: 20%;
-  left: 15%;
+  width: 280px;
+  height: 280px;
+  bottom: 15%;
+  left: 10%;
   background: var(--sky);
 }
 
 .shape-4 {
-  width: 350px;
-  height: 350px;
-  top: 30%;
-  right: 20%;
-  background: var(--teal);
+  width: 400px;
+  height: 400px;
+  top: 25%;
+  right: 15%;
+  background: var(--sapphire);
   opacity: 0.05;
 }
 
 .shape-5 {
-  width: 200px;
-  height: 200px;
-  bottom: 10%;
-  right: 5%;
-  background: var(--lavender);
+  width: 220px;
+  height: 220px;
+  bottom: 8%;
+  right: 3%;
+  background: var(--teal);
+}
+
+.shape-6 {
+  width: 300px;
+  height: 300px;
+  top: 40%;
+  left: 25%;
+  background: var(--mauve);
+  opacity: 0.04;
+}
+
+.shape-7 {
+  width: 180px;
+  height: 180px;
+  top: 10%;
+  right: 40%;
+  background: var(--pink);
+  opacity: 0.05;
 }
 
 .portfolio-container {

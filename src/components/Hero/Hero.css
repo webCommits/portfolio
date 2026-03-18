@@ -22,12 +22,14 @@
 
 .particle {
   position: absolute;
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
   background: var(--sky);
   border-radius: 50%;
-  opacity: 0.4;
-  box-shadow: 0 0 10px var(--sky);
+  opacity: 0.5;
+  box-shadow: 0 0 12px var(--sky), 0 0 24px rgba(137, 220, 235, 0.3);
+  pointer-events: none;
+  will-change: transform;
 }
 
 .hero-container {

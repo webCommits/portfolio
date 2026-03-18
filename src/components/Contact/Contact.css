@@ -18,6 +18,28 @@
   font-weight: 800;
   color: var(--sky);
   margin-bottom: 1.5rem;
+  display: inline-block;
+}
+
+.typewriter-cursor {
+  color: var(--sky);
+  font-weight: 300;
+  margin-left: 2px;
+  animation: none;
+  opacity: 0;
+}
+
+.typewriter-cursor.visible {
+  animation: cursorBlink 0.6s infinite;
+}
+
+@keyframes cursorBlink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
 }
 
 .contact-subtitle {

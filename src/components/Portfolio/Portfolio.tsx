@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -13,11 +13,28 @@ interface Project {
   image: string;
 }
 
+interface ShapeState {
+  x: number;
+  y: number;
+  rotation: number;
+}
+
+const colorPalette = [
+  'var(--blue)',
+  'var(--sky)',
+  'var(--sapphire)',
+  'var(--teal)',
+  'var(--lavender)',
+  'var(--mauve)',
+];
+
 const Portfolio: React.FC = () => {
   const { t } = useTranslation();
   const portfolioRef = useRef<HTMLElement>(null);
   const [currentProject, setCurrentProject] = useState(0);
   const backgroundRef = useRef<HTMLDivElement>(null);
+  const baseAnimationsRef = useRef<gsap.core.Tween[]>([]);
+  const currentProjectRef = useRef(0);
 
   const projects: Project[] = [
     { id: 1, key: 'trackable', link: 'https://github.com/webCommits/trackable', image: '/trackable.webp' },
@@ -36,13 +53,108 @@ const Portfolio: React.FC = () => {
     { id: 14, key: 'snakegame', link: 'https://github.com/LStoneyy/snake-game', image: '/snakegame.webp' },
   ];
 
-  const handleNext = () => {
+  const startBaseAnimations = useCallback((shapes: NodeListOf<Element>, initialStates?: ShapeState[], projectIndex: number = 0) => {
+    baseAnimationsRef.current.forEach(anim => anim.kill());
+    baseAnimationsRef.current = [];
+
+    shapes.forEach((shape, i) => {
+      const initialState = initialStates?.[i] || { x: 0, y: 0, rotation: 0 };
+      const targetX = initialState.x + gsap.utils.random(-30, 30);
+      const targetY = initialState.y + gsap.utils.random(-40, 40);
+      const targetRotation = initialState.rotation + gsap.utils.random(-10, 10);
+
+      gsap.set(shape, {
+        x: initialState.x,
+        y: initialState.y,
+        rotation: initialState.rotation,
+        background: colorPalette[(projectIndex + i) % colorPalette.length],
+      });
+
+      const anim = gsap.to(shape, {
+        x: targetX,
+        y: targetY,
+        rotation: targetRotation,
+        duration: gsap.utils.random(8, 15),
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut',
+        delay: i * 0.3,
+      });
+
+      baseAnimationsRef.current.push(anim);
+    });
+  }, []);
+
+  const triggerBurstAnimation = useCallback(() => {
+    const shapes = backgroundRef.current?.querySelectorAll('.bg-shape');
+    if (!shapes) return;
+
+    const currentStates: ShapeState[] = [];
+    shapes.forEach((shape) => {
+      const transform = gsap.getProperty(shape);
+      currentStates.push({
+        x: (transform('x') as number) || 0,
+        y: (transform('y') as number) || 0,
+        rotation: (transform('rotation') as number) || 0,
+      });
+    });
+
+    baseAnimationsRef.current.forEach(anim => anim.kill());
+    baseAnimationsRef.current = [];
+
+    const newStates: ShapeState[] = [];
+    const projectIndex = currentProjectRef.current;
+
+    shapes.forEach((shape, i) => {
+      const currentState = currentStates[i];
+      const burstX = currentState.x + gsap.utils.random(-80, 80);
+      const burstY = currentState.y + gsap.utils.random(-80, 80);
+      const burstRotation = currentState.rotation + gsap.utils.random(30, 90);
+      const newColor = colorPalette[(projectIndex + i) % colorPalette.length];
+
+      newStates.push({
+        x: burstX,
+        y: burstY,
+        rotation: burstRotation,
+      });
+
+      gsap.timeline()
+        .to(shape, {
+          x: burstX,
+          y: burstY,
+          rotation: burstRotation,
+          scale: 1.4,
+          opacity: 0.12,
+          duration: 0.4,
+          ease: 'power2.out',
+        })
+        .to(shape, {
+          background: newColor,
+          duration: 0.3,
+        }, 0)
+        .to(shape, {
+          scale: 1,
+          opacity: 0.06,
+          duration: 0.4,
+          ease: 'power2.inOut',
+          onComplete: () => {
+            startBaseAnimations(shapes, newStates, projectIndex);
+          },
+        });
+    });
+  }, [startBaseAnimations]);
+
+  const handleNext = useCallback(() => {
     gsap.to('.portfolio-mockup', {
       x: -50,
       opacity: 0,
       duration: 0.3,
       onComplete: () => {
-        setCurrentProject((prev) => (prev + 1) % projects.length);
+        setCurrentProject((prev) => {
+          const next = (prev + 1) % projects.length;
+          currentProjectRef.current = next;
+          return next;
+        });
         gsap.fromTo('.portfolio-mockup',
           { x: 50, opacity: 0 },
           { x: 0, opacity: 1, duration: 0.3 }
@@ -61,15 +173,22 @@ const Portfolio: React.FC = () => {
         );
       }
     });
-  };
 
-  const handlePrev = () => {
+    currentProjectRef.current = (currentProjectRef.current + 1) % projects.length;
+    triggerBurstAnimation();
+  }, [triggerBurstAnimation]);
+
+  const handlePrev = useCallback(() => {
     gsap.to('.portfolio-mockup', {
       x: 50,
       opacity: 0,
       duration: 0.3,
       onComplete: () => {
-        setCurrentProject((prev) => (prev - 1 + projects.length) % projects.length);
+        setCurrentProject((prev) => {
+          const next = (prev - 1 + projects.length) % projects.length;
+          currentProjectRef.current = next;
+          return next;
+        });
         gsap.fromTo('.portfolio-mockup',
           { x: -50, opacity: 0 },
           { x: 0, opacity: 1, duration: 0.3 }
@@ -88,7 +207,10 @@ const Portfolio: React.FC = () => {
         );
       }
     });
-  };
+
+    currentProjectRef.current = (currentProjectRef.current - 1 + projects.length) % projects.length;
+    triggerBurstAnimation();
+  }, [triggerBurstAnimation]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -138,22 +260,15 @@ const Portfolio: React.FC = () => {
 
       const shapes = backgroundRef.current?.querySelectorAll('.bg-shape');
       if (shapes) {
-        shapes.forEach((shape) => {
-          gsap.to(shape, {
-            y: `+=${gsap.utils.random(-50, 50)}`,
-            x: `+=${gsap.utils.random(-30, 30)}`,
-            rotation: gsap.utils.random(-15, 15),
-            duration: gsap.utils.random(3, 6),
-            repeat: -1,
-            yoyo: true,
-            ease: 'sine.inOut',
-          });
-        });
+        startBaseAnimations(shapes, undefined, 0);
       }
     }, portfolioRef);
 
-    return () => ctx.revert();
-  }, []);
+    return () => {
+      ctx.revert();
+      baseAnimationsRef.current.forEach(anim => anim.kill());
+    };
+  }, [startBaseAnimations]);
 
   const currentProjectKey = projects[currentProject].key;
 
@@ -165,6 +280,8 @@ const Portfolio: React.FC = () => {
         <div className="bg-shape shape-3"></div>
         <div className="bg-shape shape-4"></div>
         <div className="bg-shape shape-5"></div>
+        <div className="bg-shape shape-6"></div>
+        <div className="bg-shape shape-7"></div>
       </div>
       <div className="portfolio-container">
         <h2 className="portfolio-title">{t('portfolio.title')}</h2>

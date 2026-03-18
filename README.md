@@ -19,7 +19,8 @@
 |---|---|
 | 🎨 **Catppuccin Themes** | 4 Farbpaletten (Latte → Frappé → Macchiato → Mocha), die sich beim Scrollen automatisch wechseln |
 | ✨ **GSAP Animationen** | Scroll-getriggerte Animationen, Parallax-Effekte, schwebende Partikel und Timeline-Übergänge |
-| 💼 **Portfolio Carousel** | Projekte im Laptop-Mockup-Frame mit animierten Übergängen |
+| 🌌 **Tech Constellation** | Force-directed Visualisierung der Technologien mit Gravitations-Effekt bei Mausbewegung |
+| 💼 **Portfolio Carousel** | Projekte im Laptop-Mockup-Frame mit animierten Übergängen und dynamischem Hintergrund |
 | 📄 **Lebenslauf Timeline** | Berufserfahrung & Ausbildung mit animierter vertikaler Timeline |
 | 📱 **Responsive Design** | Adaptive Navigation mit animiertem Hamburger-Menü |
 | 📬 **Kontaktformular** | Serverlose Formulare via FormSubmit.co |
@@ -39,24 +40,25 @@ Die Website nutzt die [Catppuccin](https://catppuccin.com/) Farbpalette. Beim Sc
 ```
 src/
 ├── components/
-│   ├── Hero/           # Landing Section mit Parallax & Partikel
-│   ├── Header/         # Navigation mit adaptivem Hamburger-Menü
-│   ├── About/          # Über mich mit animiertem Tech-Stack Background
-│   ├── Portfolio/      # Projekt-Carousel mit Laptop-Mockup
-│   ├── Resume/         # Timeline mit Toggle (Erfahrung/Ausbildung)
-│   ├── Contact/        # Kontaktformular (FormSubmit.co)
-│   ├── Footer/         # Footer mit Links & Copyright
-│   ├── FloatingButtons/ # Schwebende Kontakt-Buttons
-│   └── Loading/        # Gebrandeter Ladebildschirm
+│   ├── Hero/              # Landing Section mit Parallax & Maus-reactiven Partikeln
+│   ├── Header/            # Navigation mit adaptivem Hamburger-Menü
+│   ├── About/             # About Section mit Force-Directed Tech Constellation
+│   ├── Portfolio/         # Projekt-Carousel mit dynamischem Hintergrund
+│   ├── Resume/            # Timeline mit Toggle (Erfahrung/Ausbildung)
+│   ├── Contact/           # Kontaktformular mit Typewriter-Animation
+│   ├── CustomCursor/      # Catppuccin-Theme Custom Cursor
+│   ├── Footer/            # Footer mit Links & Copyright
+│   ├── FloatingButtons/   # Schwebende Kontakt-Buttons
+│   └── Loading/           # Gebrandeter Ladebildschirm
 ├── pages/
-│   ├── Impressum.tsx   # Impressum (§5 TMG)
-│   └── Datenschutz.tsx # Datenschutzerklärung (DSGVO)
+│   ├── Impressum.tsx     # Impressum (§5 TMG)
+│   └── Datenschutz.tsx    # Datenschutzerklärung (DSGVO)
 ├── hooks/
 │   └── useScrollTheme.ts  # Scroll-basierter Theme-Wechsel
 ├── styles/
-│   ├── themes.css      # Catppuccin Farbvariablen
-│   └── global.css      # Globale Styles & Utilities
-└── App.tsx             # Routing & Seitenaufbau
+│   ├── themes.css         # Catppuccin Farbvariablen
+│   └── global.css         # Globale Styles & Utilities
+└── App.tsx               # Routing & Seitenaufbau
 ```
 
 ---
@@ -69,9 +71,27 @@ src/
 | **TypeScript** | Typsicherheit |
 | **GSAP 3.14** | Animationen & ScrollTrigger |
 | **React Router 7** | Client-seitiges Routing |
+| **i18next** | Internationalisierung (DE/EN) |
 | **Epilogue** | Schriftart (Google Fonts) |
 | **FormSubmit.co** | Kontaktformular (serverlos) |
 | **gh-pages** | Deployment auf GitHub Pages |
+
+### Verfügbare Technologien im Portfolio
+
+<details>
+<summary>Klicken um alle Technologien anzuzeigen</summary>
+
+**Frontend:** React, TypeScript, JavaScript, HTML5, CSS3, GSAP
+
+**Backend:** Python, Django, Ruby, Rails, Java, Node.js
+
+**DevOps & Tools:** Docker, Git, ShopWare, Moodle, Symfony
+
+**Design & Media:** Premiere Pro, InDesign, Affinity Suite, Gimp, DaVinci
+
+**Engineering:** NX, Fusion 360, FL Studio
+
+</details>
 
 ---
 
