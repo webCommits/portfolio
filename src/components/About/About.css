@@ -124,13 +124,13 @@
   transition: opacity 0.5s ease;
 }
 
-.bento-item:hover {
+.bento-item:hover, .bento-item.mobile-active {
   box-shadow: 0 15px 35px color-mix(in srgb, var(--item-color) 15%, rgba(0, 0, 0, 0.4));
   border-color: var(--item-color);
   z-index: 10;
 }
 
-.bento-item:hover::before {
+.bento-item:hover::before, .bento-item.mobile-active::before {
   opacity: 1;
 }
 
@@ -215,7 +215,7 @@
   border: 1px solid transparent;
 }
 
-.bento-item:hover .skill-tag {
+.bento-item:hover .skill-tag, .bento-item.mobile-active .skill-tag {
   border-color: color-mix(in srgb, var(--item-color) 20%, transparent);
 }
 

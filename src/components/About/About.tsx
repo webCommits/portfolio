@@ -68,14 +68,54 @@ const About: React.FC = () => {
         scrollTrigger: { trigger: '.bento-grid', start: 'top 85%' },
       });
 
-      // 2. Mouse Tracking & 3D Tilt Effect (Desktop Only)
+      // 2. Mouse Tracking & 3D Tilt Effect 
       const items = gsap.utils.toArray<HTMLElement>('.bento-item');
       const isDesktop = window.matchMedia("(pointer: fine)").matches;
       
       const cleanupFns = items.map((item) => {
-        if (!isDesktop) return () => {};
+        if (!isDesktop) {
+          // MOBILE WOW-Effect: Animate flashlight & tilt slightly based on scroll
+          const mobileTrigger = ScrollTrigger.create({
+            trigger: item,
+            start: "top 75%",
+            end: "bottom 30%",
+            onEnter: () => item.classList.add('mobile-active'),
+            onLeave: () => item.classList.remove('mobile-active'),
+            onEnterBack: () => item.classList.add('mobile-active'),
+            onLeaveBack: () => item.classList.remove('mobile-active'),
+            onUpdate: (self) => {
+              // Create a sweeping flashlight effect purely from scroll position
+              const rect = item.getBoundingClientRect();
+              const sweepX = rect.width * self.progress;
+              const sweepY = rect.height * self.progress;
+              item.style.setProperty('--x', `${sweepX}px`);
+              item.style.setProperty('--y', `${sweepY}px`);
+            }
+          });
 
-        // Create performant GSAP setters for rotation
+          // Add a subtle Parallax 3D tilt as the item scrolls vertically through viewport
+          gsap.fromTo(item, 
+            { rotationX: -8, rotationY: 4 },
+            { 
+              rotationX: 8, 
+              rotationY: -4,
+              ease: "none",
+              scrollTrigger: {
+                trigger: item,
+                start: "top 90%",
+                end: "bottom 10%",
+                scrub: true,
+              }
+            }
+          );
+          
+          return () => {
+             // GSAP context automatically reverts ScrollTriggers, nothing specialized to clean up here but we keep the structure.
+             item.classList.remove('mobile-active');
+          };
+        }
+
+        // Desktop: Create performant GSAP setters for rotation
         const qRotX = gsap.quickTo(item, "rotationX", { ease: "power3.out", duration: 0.5 });
         const qRotY = gsap.quickTo(item, "rotationY", { ease: "power3.out", duration: 0.5 });
         
