@@ -4,70 +4,91 @@ Guidelines for AI coding agents working in this codebase.
 
 ## Project Overview
 
-Personal portfolio website built with React 19, TypeScript, and GSAP animations. Uses Catppuccin theme system with progressive color transitions on scroll. Focuses on high-end, modern UI/UX with "Bento Box" layouts, interactive mouse-reactive elements, and 3D parallax GSAP effects. German/English internationalization via i18next. SEO-optimized and deployed to GitHub Pages.
+Personal portfolio website built with React 19, TypeScript, and GSAP animations. Uses Catppuccin theme system with progressive color transitions on scroll. Features "Bento Box" layouts, interactive mouse-reactive elements, 3D parallax effects, and German/English i18next internationalization. SEO-optimized, deployed to GitHub Pages.
 
 ## Build/Lint/Test Commands
 
 ```bash
-npm start                  # Development server
+npm start                  # Development server (localhost:3000)
 npm run build              # Production build
-npm test                   # Run tests
-npm test -- src/components/Header/Header.test.tsx  # Run single test
-npm test -- --coverage --watchAll=false   # Tests with coverage
+npm test                   # Run all tests (Jest watch mode)
+npm test -- --watchAll=false  # Run tests once (no watch)
+npm test -- --coverage --watchAll=false  # Tests with coverage
+npm test -- src/components/Header/Header.test.tsx  # Run single test file
 npm run deploy             # Deploy to GitHub Pages
 ```
 
-Note: Uses Create React App with react-scripts. Tests use Jest + React Testing Library.
+Uses Create React App (react-scripts 5.0.1). No standalone lint command - ESLint runs via react-scripts.
 
 ## Code Style Guidelines
 
 ### Import Order
 
-Group imports with blank lines between:
-1. React imports
-2. Third-party libraries (react-router-dom, gsap, i18next)
-3. Local components/hooks/assets
-4. CSS files
+Group imports with blank lines between groups:
 
 ```typescript
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Routes, Route } from 'react-router-dom';
 
 import ComponentName from './ComponentName';
 import useCustomHook from '../hooks/useCustomHook';
-
 import './Component.css';
 ```
 
+Order: React → Third-party libraries → Local imports → CSS files
+
 ### Component Structure
 
-- Use functional components with `React.FC<Props>` type annotation
-- Define interfaces at top of file, before component
-- Export components as default
-
 ```typescript
-interface ComponentProps {
-  activeSection: string;
+interface Project {
+  id: number;
+  key: string;
+  link: string;
 }
 
-const ComponentName: React.FC<ComponentProps> = ({ activeSection }) => {
-  // hooks, state, effects, handlers, render
+interface ComponentProps {
+  activeSection: string;
+  onNavigate?: (section: string) => void;
+}
+
+const ComponentName: React.FC<ComponentProps> = ({ activeSection, onNavigate }) => {
+  const { t } = useTranslation();
+  const containerRef = useRef<HTMLElement>(null);
+  
+  useEffect(() => {
+    // GSAP animations here
+  }, []);
+
+  return (
+    <section id="component-name" className="component-name theme-latte" ref={containerRef}>
+      {/* content */}
+    </section>
+  );
 };
 
 export default ComponentName;
 ```
 
-### GSAP Animation Pattern
+- Use `React.FC<Props>` type annotation
+- Define interfaces before component
+- Export as default
+- Destructure props in function signature
 
-Always use `gsap.context` with cleanup to prevent memory leaks:
+### GSAP Animation Patterns
+
+Always wrap in `gsap.context` with cleanup:
 
 ```typescript
 useEffect(() => {
   const ctx = gsap.context(() => {
     gsap.from(elementRef.current, {
-      scrollTrigger: { trigger: elementRef.current, start: 'top 80%' },
+      scrollTrigger: { 
+        trigger: elementRef.current, 
+        start: 'top 80%' 
+      },
       y: 50,
       opacity: 0,
       duration: 1,
@@ -78,19 +99,36 @@ useEffect(() => {
 }, []);
 ```
 
-Register GSAP plugins before use: `gsap.registerPlugin(ScrollTrigger);`
+Register plugins at component top: `gsap.registerPlugin(ScrollTrigger);`
+
+Animation types used:
+- **Entrance:** `gsap.from()` with ScrollTrigger
+- **Timeline:** `gsap.timeline({ defaults: { ease: 'power3.out' } })`
+- **Floating:** `gsap.to(el, { y: -20, duration: 2, repeat: -1, yoyo: true, ease: 'sine.inOut' })`
+- **Mouse tracking:** Use `gsap.quickTo()` for performance
+- **Scroll parallax:** `scrollTrigger: { scrub: 1 }`
 
 ### Refs
 
-Type refs explicitly: `const containerRef = useRef<HTMLElement>(null);`
+Type explicitly with null initial value:
+
+```typescript
+const containerRef = useRef<HTMLElement>(null);
+const itemsRef = useRef<HTMLDivElement[]>([]);
+const dataRef = useRef<CustomType[]>([]);
+```
 
 ### Naming Conventions
 
-- **Components:** PascalCase (Header, Hero, Portfolio)
-- **Files:** Match component name (Header.tsx, Header.css)
-- **Hooks:** camelCase with `use` prefix (useScrollTheme)
-- **CSS classes:** kebab-case (.hero-container, .portfolio-mockup)
-- **Translation keys:** dot notation (t('hero.name'), t('portfolio.projects.key.title'))
+| Type | Convention | Example |
+|------|------------|---------|
+| Components | PascalCase | `Header`, `Hero`, `Portfolio` |
+| Files | Match component | `Header.tsx`, `Header.css` |
+| Hooks | camelCase + use | `useScrollTheme` |
+| CSS classes | kebab-case | `.hero-container`, `.portfolio-mockup` |
+| Interfaces | PascalCase | `Project`, `ComponentProps` |
+| Translation keys | dot notation | `t('hero.name')`, `t('portfolio.projects.key.title')` |
+| Constants | camelCase | `colorPalette`, `themeConfigs` |
 
 ### File Organization
 
@@ -98,73 +136,64 @@ Type refs explicitly: `const containerRef = useRef<HTMLElement>(null);`
 src/
 ├── components/ComponentName/ComponentName.tsx, ComponentName.css
 ├── hooks/useHookName.ts
-├── pages/PageName.tsx
+├── pages/PageName.tsx, PageName.css
 ├── styles/themes.css, global.css
 ├── i18n/index.ts, locales/de.json, en.json
-└── App.tsx
+├── assets/
+├── App.tsx, App.css
+└── index.tsx
 ```
 
 ### Theme System
 
-Catppuccin color palette with four theme variants applied via CSS classes:
+Catppuccin palette with four variants via CSS classes:
 
-- `.theme-latte` - Light theme
+- `.theme-latte` - Light
 - `.theme-frappe` - Medium dark
 - `.theme-macchiato` - Dark
 - `.theme-mocha` - Darkest
 
-Access colors via CSS variables: `var(--base)`, `var(--text)`, `var(--surface1)`, `var(--mauve)`, `var(--sky)`, etc.
+Available CSS variables: `--base`, `--text`, `--surface0`, `--surface1`, `--surface2`, `--mauve`, `--sky`, `--blue`, `--lavender`, `--teal`, `--green`, `--yellow`, `--peach`, `--red`, `--pink`
 
-*Advanced Styling:* Use CSS `color-mix` with CSS variables for dynamic themes: 
-`color-mix(in srgb, var(--item-color) 20%, transparent)`
-Use inline styles for dynamic component custom properties:
-`style={{ '--item-color': group.color } as React.CSSProperties}`
+Dynamic theming with `color-mix`:
+```css
+background: color-mix(in srgb, var(--item-color) 20%, transparent);
+```
+
+Inline style custom properties:
+```typescript
+style={{ '--item-color': group.color } as React.CSSProperties}
+```
 
 ### i18n Usage
 
 ```typescript
 const { t, i18n } = useTranslation();
-t('header.about');                                    // Simple translation
-t('key', { returnObjects: true }) as string[]        // Array for lists
-i18n.changeLanguage('en');                            // Change language
+
+t('header.about');                                           // Simple string
+t('portfolio.projects.key.technologies', { returnObjects: true }) as string[]  // Array
+i18n.changeLanguage('en');                                   // Switch language
 ```
+
+Fallback language is German (`de`). Detection via localStorage and navigator.
 
 ### TypeScript Configuration
 
-Strict mode enabled. Target: ES5. JSX: react-jsx. Module: ESNext. Module resolution: Node.
+Strict mode enabled. Target: ES5. JSX: `react-jsx`. Module: ESNext. Resolution: Node.
 
 ### Error Handling
 
-Use optional chaining for DOM manipulation. Check element existence before GSAP operations:
+Use optional chaining for DOM operations. Check element existence:
 
 ```typescript
 const element = document.getElementById('section');
 if (element) {
   element.scrollIntoView({ behavior: 'smooth' });
 }
+
+// Or with optional chaining
+heroEl?.addEventListener('mousemove', handleMouseMove);
 ```
-
-### ESLint
-
-Extends `react-app` and `react-app/jest` presets. No Prettier config present.
-
-### Animation Patterns
-
-1. **ScrollTrigger entrance:** `gsap.from(elementRef.current, { scrollTrigger: {...}, y: 50, opacity: 0, duration: 1 });`
-2. **Timeline:** `const tl = gsap.timeline({ defaults: { ease: 'power3.out' } }); tl.from(el1, {...}).from(el2, {...}, '-=0.7');`
-3. **Floating:** `gsap.to(element, { y: 'random(-80, 80)', duration: 'random(10, 15)', repeat: -1, yoyo: true, ease: 'sine.inOut' });`
-4. **High-Performance Mouse Tracking:** Use `gsap.quickTo()` for mouse/cursor followers.
-```typescript
-const xTo = gsap.quickTo(el, "x", { duration: 0.5, ease: "power3.out" });
-window.addEventListener('mousemove', (e) => xTo(e.clientX));
-```
-5. **Device Optimization:** Use `window.matchMedia("(pointer: fine)").matches` to restrict intensive mouse/hover 3D animations (`rotationX/Y`) to desktop, and implement ScrollTrigger fallback proxies for mobile UI (Touch sweeps).
-
-### Form Integration
-Contact section uses FormSubmit. Do NOT use custom React Router success routes (e.g., `/danke`). Just point `<form action="...">` and let FormSubmit handle the default success flow locally.
-
-### SEO & Web Vitals
-When generating pages, maintain strict HTML5 semantic standards. Meta-tags, JSON-LD Schema, and WebManifest are actively managed in `public/index.html`. 
 
 ### Testing
 
@@ -178,6 +207,37 @@ test('renders expected content', () => {
 });
 ```
 
+Tests use Jest + React Testing Library. Mock i18next when needed.
+
+### Form Integration
+
+Contact form uses FormSubmit service. Point form action directly:
+
+```typescript
+<form action="https://formsubmit.co/email@example.com" method="POST">
+```
+
+Do NOT create custom React Router success routes. Let FormSubmit handle redirects.
+
+### SEO & Web Vitals
+
+Maintain HTML5 semantic standards. Meta tags, JSON-LD Schema, and WebManifest are in `public/index.html`. Use semantic elements (`<section>`, `<main>`, `<nav>`).
+
+### Device Optimization
+
+Restrict intensive 3D hover animations to desktop:
+
+```typescript
+const isDesktop = window.matchMedia("(pointer: fine)").matches;
+```
+
+Provide ScrollTrigger fallbacks for mobile touch interfaces.
+
 ### Deployment
 
-`npm run build` → `npm run deploy` to GitHub Pages. Output directory: `build/`
+```bash
+npm run build   # Creates build/ directory
+npm run deploy  # Deploys to gh-pages branch
+```
+
+Output: `build/`. Uses homepage field in package.json for path resolution.
