@@ -63,11 +63,6 @@
         "description": "Self-hosted Docker service to download Spotify playlists as MP3. Responsive web UI, automatic playlist monitoring, CSV import, and Spotify OAuth integration. Uses yt-dlp for downloads and FastAPI in the backend.",
         "technologies": ["Docker", "FastAPI", "React", "yt-dlp", "Python"]
       },
-      "clweb": {
-        "title": "CL-Verkehrstechnik",
-        "description": "Traffic sign plans and technology. Clear, precise, nationwide, in pure vanilla code.",
-        "technologies": ["HTML", "Vanilla CSS", "Vanilla JavaScript"]
-      },
       "lashesbydim": {
         "title": "Lashes by Dim",
         "description": "Interactive website for a lash stylist",
@@ -77,11 +72,6 @@
         "title": "Ben-Bachmair",
         "description": "Website of an internationally renowned professor & author, based on Vue.js.",
         "technologies": ["Vue.js", "JavaScript"]
-      },
-      "kernbohrungen": {
-        "title": "Kernbohrungen Günther",
-        "description": "Website of a master craftsman business in masonry and concrete construction, built with Eleventy and Nunjucks.",
-        "technologies": ["Eleventy", "Nunjucks", "HTML/CSS"]
       },
       "anzeigeschalten": {
         "title": "AnzeigeSchalten",
@@ -102,6 +92,11 @@
         "title": "Snake Game",
         "description": "A simple Snake clone written in Python with PyGame. Created as a self-study programming project during a didactics course.",
         "technologies": ["Python", "PyGame"]
+      },
+      "weeklyplanner": {
+        "title": "Weekly Planner Web",
+        "description": "Self-hostable, web-based weekly planner for companies featuring account creation, an admin panel, and a responsive interface for organizing tasks and appointments.",
+        "technologies": ["React", "Vite", "Docker-Compose"]
       }
     }
   },

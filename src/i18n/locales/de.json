@@ -63,11 +63,6 @@
         "description": "Self-hosted Docker-Service zum Download von Spotify-Playlists als MP3. Responsive Web-UI, automatische Playlist-Überwachung, CSV-Import und Spotify-OAuth-Integration. Mit yt-dlp für Downloads und FastAPI im Backend.",
         "technologies": ["Docker", "FastAPI", "React", "yt-dlp", "Python"]
       },
-      "clweb": {
-        "title": "CL-Verkehrstechnik",
-        "description": "Verkehrszeichenpläne und -technik. Klar, präzise, deutschlandweit, in reinem Vanilla Code.",
-        "technologies": ["HTML", "Vanilla CSS", "Vanilla JavaScript"]
-      },
       "lashesbydim": {
         "title": "Lashes by Dim",
         "description": "Interaktive Website für eine Wimpernstylistin",
@@ -77,11 +72,6 @@
         "title": "Ben-Bachmair",
         "description": "Website eines international renommierten Professors & Autors, basierend auf Vue.js.",
         "technologies": ["Vue.js", "JavaScript"]
-      },
-      "kernbohrungen": {
-        "title": "Kernbohrungen Günther",
-        "description": "Website eines Meisterbetriebs im Mauerwerks- und Betonbau, aufgebaut mit Eleventy und Nunjucks.",
-        "technologies": ["Eleventy", "Nunjucks", "HTML/CSS"]
       },
       "anzeigeschalten": {
         "title": "AnzeigeSchalten",
@@ -102,6 +92,11 @@
         "title": "Snake Game",
         "description": "Ein einfacher Snake-Klon, geschrieben in Python mit PyGame. Erstellt als self-study Programmier-Projekt im Zuge eines Lehrgangs in der Technikdidaktik.",
         "technologies": ["Python", "PyGame"]
+      },
+      "weeklyplanner": {
+        "title": "Weekly Planner Web",
+        "description": "Self-hostbarer, webbasierter Wochenplaner für Unternehmen mit Account-Erstellung, Admin-Panel und responsiver Oberfläche zur Organisation von Aufgaben und Terminen.",
+        "technologies": ["React", "Vite", "Docker-Compose"]
       }
     }
   },
