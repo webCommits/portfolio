@@ -37,7 +37,7 @@ const Portfolio: React.FC = () => {
   const currentProjectRef = useRef(0);
 
   const projects: Project[] = [
-    { id: 1, key: 'xrnexus', link: 'https://xrnexus.de', image: '/xrnexus.webp' },
+    { id: 1, key: 'xrnexus', link: 'https://xr-essential.com/', image: '/xrnexus.webp' },
     { id: 2, key: 'trackable', link: 'https://github.com/webCommits/trackable', image: '/trackable.webp' },
     { id: 3, key: 'weeklyplanner', link: 'https://github.com/LStoneyy/weekly-planner-web', image: '/weeklyplanner.webp' },
     { id: 4, key: 'rueckenwind', link: 'https://rueckenwind.reise', image: '/rueckenwind.webp' },
