@@ -37,20 +37,21 @@ const Portfolio: React.FC = () => {
   const currentProjectRef = useRef(0);
 
   const projects: Project[] = [
-    { id: 1, key: 'trackable', link: 'https://github.com/webCommits/trackable', image: '/trackable.webp' },
-    { id: 2, key: 'weeklyplanner', link: 'https://github.com/LStoneyy/weekly-planner-web', image: '/weeklyplanner.webp' },
-    { id: 3, key: 'rueckenwind', link: 'https://rueckenwind.reise', image: '/rueckenwind.webp' },
-    { id: 4, key: 'gpupgrade', link: 'https://webcommits.github.io/gpupgrade/', image: '/gpupgrade.webp' },
-    { id: 5, key: 'anglistikweb', link: 'https://web.anglistik.rwth-aachen.de', image: '/anglistikweb.webp' },
-    { id: 6, key: 'portfolio', link: 'https://github.com/webCommits/portfolio', image: '/portfolio.webp' },
-    { id: 7, key: 'spotifydl', link: 'https://github.com/LStoneyy/spotify-download', image: '/spotifydl.webp' },
-    { id: 8, key: 'lashesbydim', link: 'https://lashesbydim.de/', image: '/lashesbydim.webp' },
-    { id: 9, key: 'benbachmair', link: 'http://ben-bachmair.de/', image: '/benbachmair.webp' },
-    { id: 10, key: 'anzeigeschalten', link: 'https://lstoneyy.github.io/anzeigeschalten/', image: '/anzeigeschalten.webp' },
-    { id: 11, key: 'mdtopdf', link: 'https://github.com/LStoneyy/md-to-html-pdf', image: '/mdtopdf.webp' },
-    { id: 12, key: 'notion', link: 'https://github.com/LStoneyy/notion-to-obsidian-py', image: '/notion.webp' },
-    { id: 13, key: 'snakegame', link: 'https://github.com/LStoneyy/snake-game', image: '/snakegame.webp' },
-    { id: 14, key: 'webcommits', link: 'https://www.webcommits.info', image: '/webcommits.webp' },
+    { id: 1, key: 'xrnexus', link: 'https://xrnexus.de', image: '/xrnexus.webp' },
+    { id: 2, key: 'trackable', link: 'https://github.com/webCommits/trackable', image: '/trackable.webp' },
+    { id: 3, key: 'weeklyplanner', link: 'https://github.com/LStoneyy/weekly-planner-web', image: '/weeklyplanner.webp' },
+    { id: 4, key: 'rueckenwind', link: 'https://rueckenwind.reise', image: '/rueckenwind.webp' },
+    { id: 5, key: 'gpupgrade', link: 'https://webcommits.github.io/gpupgrade/', image: '/gpupgrade.webp' },
+    { id: 6, key: 'anglistikweb', link: 'https://web.anglistik.rwth-aachen.de', image: '/anglistikweb.webp' },
+    { id: 7, key: 'portfolio', link: 'https://github.com/webCommits/portfolio', image: '/portfolio.webp' },
+    { id: 8, key: 'spotifydl', link: 'https://github.com/LStoneyy/spotify-download', image: '/spotifydl.webp' },
+    { id: 9, key: 'webcommits', link: 'https://www.webcommits.info', image: '/webcommits.webp' },
+    { id: 10, key: 'lashesbydim', link: 'https://lashesbydim.de/', image: '/lashesbydim.webp' },
+    { id: 11, key: 'benbachmair', link: 'http://ben-bachmair.de/', image: '/benbachmair.webp' },
+    { id: 12, key: 'anzeigeschalten', link: 'https://lstoneyy.github.io/anzeigeschalten/', image: '/anzeigeschalten.webp' },
+    { id: 13, key: 'mdtopdf', link: 'https://github.com/LStoneyy/md-to-html-pdf', image: '/mdtopdf.webp' },
+    { id: 14, key: 'notion', link: 'https://github.com/LStoneyy/notion-to-obsidian-py', image: '/notion.webp' },
+    { id: 15, key: 'snakegame', link: 'https://github.com/LStoneyy/snake-game', image: '/snakegame.webp' },
   ];
 
   const startBaseAnimations = useCallback((shapes: NodeListOf<Element>, initialStates?: ShapeState[], projectIndex: number = 0) => {

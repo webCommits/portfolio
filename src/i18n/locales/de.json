@@ -28,6 +28,11 @@
     "title": "Portfolio",
     "projectLink": "Projekt ansehen →",
     "projects": {
+      "xrnexus": {
+        "title": "XR Nexus",
+        "description": "Ein reaktives, professionelles 3D- und 2D-Planungstool mit KI-Integration für XR-Essential. Basierend auf SparkJS, ThreeJS und Vite. Gehostet mit Traefik, Docker-Compose und Supabase.",
+        "technologies": ["SparkJS", "ThreeJS", "Vite", "Traefik", "Docker-Compose", "Supabase"]
+      },
       "trackable": {
         "title": "trackable.",
         "description": "Self-hosted Zeiterfassungs-PWA für Freelancer und kleine Teams. Mit mehreren Profilen, monatlichen PDF/CSV-Exporten, Urlaubsverwaltung und automatischen E-Mail-Berichten.",
@@ -35,7 +40,7 @@
       },
       "webcommits": {
         "title": "webCommits",
-        "description": "Die Seite der besten Webentwickler.",
+        "description": "Mein Unternehmen für Webentwicklung und Digitaldienstleistungen. Neben maßgeschneiderten Websites biete ich hier auch Seminare zu KI in Bildung und Unterricht sowie IT-Beratung an.",
         "technologies": ["HTML", "CSS", "JavaScript"]
       },
       "rueckenwind": {
@@ -50,7 +55,7 @@
       },
       "anglistikweb": {
         "title": "Anglistik Web",
-        "description": "Sprechstunden- und Buchungssystem mit Login und Account-Verwaltung. Basierend auf Django und Python.",
+        "description": "Sprechstunden- und Buchungssystem für die RWTH Aachen University mit Login und Account-Verwaltung. Basierend auf Django und Python.",
         "technologies": ["Django", "Python", "HTMX", "HTML/CSS"]
       },
       "portfolio": {
@@ -59,7 +64,7 @@
         "technologies": ["React", "GSAP", "CSS", "HTML"]
       },
       "spotifydl": {
-        "title": "Spotify Playlist Downloader",
+        "title": "Sonus",
         "description": "Self-hosted Docker-Service zum Download von Spotify-Playlists als MP3. Responsive Web-UI, automatische Playlist-Überwachung, CSV-Import und Spotify-OAuth-Integration. Mit yt-dlp für Downloads und FastAPI im Backend.",
         "technologies": ["Docker", "FastAPI", "React", "yt-dlp", "Python"]
       },
@@ -96,7 +101,7 @@
       "weeklyplanner": {
         "title": "Weekly Planner Web",
         "description": "Self-hostbarer, webbasierter Wochenplaner für Unternehmen mit Account-Erstellung, Admin-Panel und responsiver Oberfläche zur Organisation von Aufgaben und Terminen.",
-        "technologies": ["React", "Vite", "Docker-Compose"]
+        "technologies": ["React 19", "Vite", "TypeScript", "Tailwind CSS", "Zustand", "Docker-Compose"]
       }
     }
   },
@@ -105,6 +110,12 @@
     "experience": "berufserfahrung",
     "education": "ausbildung",
     "experienceItems": [
+      {
+        "year": "Seit 02/2026",
+        "title": "Full-Stack Webentwickler",
+        "organization": "XR Essential GmbH",
+        "description": "Full-Stack Webentwicklung in verschiedenen Projekten, Aufbau der Server-Infrastruktur, KI-Integration sowie Mediendesign."
+      },
       {
         "year": "Seit 05/2025",
         "title": "Freiberuflicher Webentwickler",

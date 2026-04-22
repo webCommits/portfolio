@@ -28,6 +28,11 @@
     "title": "Portfolio",
     "projectLink": "View Project →",
     "projects": {
+      "xrnexus": {
+        "title": "XR Nexus",
+        "description": "A reactive, professional 3D and 2D planning tool with AI integration for XR-Essential. Built with SparkJS, ThreeJS, and Vite. Hosted with Traefik, Docker-Compose, and Supabase.",
+        "technologies": ["SparkJS", "ThreeJS", "Vite", "Traefik", "Docker-Compose", "Supabase"]
+      },
       "trackable": {
         "title": "trackable.",
         "description": "Self-hosted time tracking PWA for freelancers and small teams. Features multiple profiles, monthly PDF/CSV exports, vacation tracking, and automated email reports.",
@@ -35,7 +40,7 @@
       },
       "webcommits": {
         "title": "webCommits",
-        "description": "The website of the best web developers.",
+        "description": "My company for web development and digital services. In addition to custom websites, I offer seminars on AI in education and teaching, as well as IT consulting.",
         "technologies": ["HTML", "CSS", "JavaScript"]
       },
       "rueckenwind": {
@@ -50,7 +55,7 @@
       },
       "anglistikweb": {
         "title": "Anglistik Web",
-        "description": "Office hours and booking system with login and account management. Based on Django and Python.",
+        "description": "Office hours and booking system for RWTH Aachen University with login and account management. Based on Django and Python.",
         "technologies": ["Django", "Python", "HTMX", "HTML/CSS"]
       },
       "portfolio": {
@@ -59,7 +64,7 @@
         "technologies": ["React", "GSAP", "CSS", "HTML"]
       },
       "spotifydl": {
-        "title": "Spotify Playlist Downloader",
+        "title": "Sonus",
         "description": "Self-hosted Docker service to download Spotify playlists as MP3. Responsive web UI, automatic playlist monitoring, CSV import, and Spotify OAuth integration. Uses yt-dlp for downloads and FastAPI in the backend.",
         "technologies": ["Docker", "FastAPI", "React", "yt-dlp", "Python"]
       },
@@ -96,7 +101,7 @@
       "weeklyplanner": {
         "title": "Weekly Planner Web",
         "description": "Self-hostable, web-based weekly planner for companies featuring account creation, an admin panel, and a responsive interface for organizing tasks and appointments.",
-        "technologies": ["React", "Vite", "Docker-Compose"]
+        "technologies": ["React 19", "Vite", "TypeScript", "Tailwind CSS", "Zustand", "Docker-Compose"]
       }
     }
   },
@@ -105,6 +110,12 @@
     "experience": "experience",
     "education": "education",
     "experienceItems": [
+      {
+        "year": "Since 02/2026",
+        "title": "Full-Stack Web Developer",
+        "organization": "XR Essential GmbH",
+        "description": "Full-stack web development across various projects, server infrastructure setup, AI integration, and media design."
+      },
       {
         "year": "Since 05/2025",
         "title": "Freelance Web Developer",
