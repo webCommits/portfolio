@@ -9,33 +9,33 @@ gsap.registerPlugin(ScrollTrigger);
 const techStack = [
   {
     id: "backend",
-    title: "Backend & Databases",
+    titleKey: "about.techStackTitles.backend",
     color: "var(--peach)",
     skills: ["Python (uv/poetry)", "Django", "FastAPI", "Node.js", "Ruby on Rails", "PostgreSQL", "Supabase", "SQLite", "PHP/Symfony", "Shopware/Moodle"]
   },
   {
     id: "frontend",
-    title: "Frontend & UI",
+    titleKey: "about.techStackTitles.frontend",
     color: "var(--sky)",
-    skills: ["React", "TypeScript", "Vue", "Tailwind", "HTMX", "AlpineJS", "Three.js", "GSAP", "Vite", "PWA", "Eleventy"]
+    skills: ["React", "TypeScript", "Vue", "Tailwind", "HTMX", "Alpine.js", "Three.js", "GSAP", "Vite", "PWA", "Eleventy"]
   },
   {
     id: "devops",
-    title: "DevOps & Infra",
+    titleKey: "about.techStackTitles.devops",
     color: "var(--mauve)",
-    skills: ["Docker & Compose", "Linux/Unix & Bash", "CI/CD & Actions", "Traefik", "Coolify", "Firewalls", "Git", "Neovim/tmux"]
+    skills: ["Docker & Compose", "Linux/Unix & Bash", "CI/CD & GitHub Actions", "Traefik", "Coolify", "Firewalls", "Git", "Neovim/tmux"]
   },
   {
     id: "design",
-    title: "Design",
+    titleKey: "about.techStackTitles.design",
     color: "var(--green)",
-    skills: ["Figma", "Adobe Suite", "Affinity", "DaVinci Resolve", "Gimp/Inkscape"]
+    skills: ["Figma", "Adobe Suite (InDesign, Premiere Pro)", "Affinity Suite", "DaVinci Resolve", "Gimp/Inkscape", "Fusion 360", "Siemens NX"]
   },
   {
     id: "engineering",
-    title: "Data, Apps & 3D Engineering",
+    titleKey: "about.techStackTitles.engineering",
     color: "var(--yellow)",
-    skills: ["Data Science (R/Py)", "Matplotlib", "Pandoc", "Tkinter", "PyGame", "Gaussian Splatting", "SparkJS", "NX", "Fusion 360"]
+    skills: ["Prompt Engineering", "Coding Agents", "OpenClaw", "AI Engineering", "RAG-Architekturen", "Data Science (R/Python)", "Pandas", "Matplotlib", "Gaussian Splatting", "Pandoc", "Tkinter", "PyGame", "SparkJS"]
   }
 ];
 
@@ -247,7 +247,7 @@ const About: React.FC = () => {
                 style={{ '--item-color': group.color } as React.CSSProperties}
               >
                 <div className="bento-inner">
-                  <h3 style={{ color: group.color }}>{group.title}</h3>
+                  <h3 style={{ color: group.color }}>{t(group.titleKey)}</h3>
                   <div className="skills-list">
                     {group.skills.map((skill, sIndex) => (
                       <span key={sIndex} className="skill-tag">{skill}</span>

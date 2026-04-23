@@ -22,7 +22,14 @@
       "Ich bin Lukas Schaffrath – Webentwickler mit technischem Lehramtsabschluss der RWTH Aachen und einer Leidenschaft für digitale Lösungen. Was einst als studentischer Nebenjob begann, wurde zur Berufung: der Entwicklung moderner, leistungsstarker und bezahlbarer Websites.",
       "Während meines Studiums war ich als Webentwickler und wissenschaftliche Hilfskraft an der RWTH tätig. Heute betreue ich als IT-Administrator verschiedene technische Projekte am Institut für Anglistik und arbeite parallel selbstständig an Webprojekten unter dem Namen webCommits web Designs.",
       "Ich setze auf nachhaltigen, sauberen Code und nutzerfreundliche Konzepte. Ob mit klassischen Webtechnologien wie HTML, CSS, JavaScript oder Frameworks wie Django, Ruby on Rails, Eleventy und Symfony. Besonders gerne unterstütze ich kleinere Unternehmen mit individuellen Lösungen. Mein technisches Know-how kombiniere ich mit pädagogischem Feingefühl und klarer Kommunikation. Denn gute Webentwicklung beginnt mit dem Verständnis für die Menschen dahinter."
-    ]
+    ],
+    "techStackTitles": {
+      "backend": "Backend & Datenbanken",
+      "frontend": "Frontend & UI",
+      "devops": "DevOps & Infrastruktur",
+      "design": "Design & Medien",
+      "engineering": "AI & Data Science"
+    }
   },
   "portfolio": {
     "title": "Portfolio",

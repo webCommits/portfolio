@@ -22,7 +22,14 @@
       "I'm Lukas Schaffrath – web developer with a technical teaching degree from RWTH Aachen University and a passion for digital solutions. What started as a student side job became my calling: developing modern, powerful, and affordable websites.",
       "During my studies, I worked as a web developer and research assistant at RWTH. Today, I manage various technical projects as IT Administrator at the Institute of English Studies and work independently on web projects under the name webCommits web Designs.",
       "I focus on sustainable, clean code and user-friendly concepts. Whether with classic web technologies like HTML, CSS, JavaScript or frameworks like Django, Ruby on Rails, Eleventy, and Symfony. I particularly enjoy supporting smaller businesses with individual solutions. I combine my technical expertise with pedagogical sensitivity and clear communication. Because good web development starts with understanding the people behind it."
-    ]
+    ],
+    "techStackTitles": {
+      "backend": "Backend & Databases",
+      "frontend": "Frontend & UI",
+      "devops": "DevOps & Infrastructure",
+      "design": "Design & Media",
+      "engineering": "AI & Data Science"
+    }
   },
   "portfolio": {
     "title": "Portfolio",
