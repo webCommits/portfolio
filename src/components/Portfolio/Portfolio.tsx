@@ -29,7 +29,7 @@ const colorPalette = [
 ];
 
 const Portfolio: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const portfolioRef = useRef<HTMLElement>(null);
   const [currentProject, setCurrentProject] = useState(0);
   const backgroundRef = useRef<HTMLDivElement>(null);
@@ -37,7 +37,7 @@ const Portfolio: React.FC = () => {
   const currentProjectRef = useRef(0);
 
   const projects: Project[] = [
-    { id: 1, key: 'xrnexus', link: 'https://xr-essential.com/', image: '/xrnexus.webp' },
+    { id: 1, key: 'xrnexus', link: 'https://xr-essential.com/de/products/xr-nexus', image: '/xrnexus.webp' },
     { id: 2, key: 'trackable', link: 'https://github.com/webCommits/trackable', image: '/trackable.webp' },
     { id: 3, key: 'weeklyplanner', link: 'https://github.com/LStoneyy/weekly-planner-web', image: '/weeklyplanner.webp' },
     { id: 4, key: 'rueckenwind', link: 'https://rueckenwind.reise', image: '/rueckenwind.webp' },
@@ -272,6 +272,9 @@ const Portfolio: React.FC = () => {
   }, [startBaseAnimations]);
 
   const currentProjectKey = projects[currentProject].key;
+  const currentProjectLink = currentProjectKey === 'xrnexus' && (i18n.resolvedLanguage || i18n.language).startsWith('en')
+    ? 'https://xr-essential.com/en/products/xr-nexus'
+    : projects[currentProject].link;
 
   return (
     <section id="portfolio" className="portfolio theme-frappe" ref={portfolioRef}>
@@ -325,7 +328,7 @@ const Portfolio: React.FC = () => {
                 ))}
               </div>
               <a
-                href={projects[currentProject].link}
+                href={currentProjectLink}
                 className="project-link"
                 target="_blank"
                 rel="noopener noreferrer"
