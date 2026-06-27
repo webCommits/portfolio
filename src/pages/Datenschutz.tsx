@@ -119,7 +119,7 @@ const Datenschutz: React.FC = () => {
             52499 Baesweiler
           </p>
           <p>
-            Telefon: +4915207282881<br />
+            Telefon: +015510917998<br />
             E-Mail: webcommitswebdesigns@gmail.com
           </p>
           <p>

@@ -21,7 +21,7 @@ const Impressum: React.FC = () => {
         <section>
           <h2>Kontakt</h2>
           <p>
-            Telefon: +49 (0) 1520 7282881<br />
+            Telefon: +015510917998<br />
             E-Mail: info@webcommits.info
           </p>
         </section>
