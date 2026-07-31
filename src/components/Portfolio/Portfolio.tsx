@@ -38,6 +38,7 @@ const Portfolio: React.FC = () => {
 
   const projects: Project[] = [
     { id: 1, key: 'xrnexus', link: 'https://xr-essential.com/de/products/xr-nexus', image: '/xrnexus.webp' },
+    { id: 16, key: 'llamaparameterscout', link: 'https://github.com/LStoneyy/llama-parameter-scout', image: '/llama-parameter-scout.webp' },
     { id: 2, key: 'trackable', link: 'https://github.com/webCommits/trackable', image: '/trackable.webp' },
     { id: 3, key: 'weeklyplanner', link: 'https://github.com/LStoneyy/weekly-planner-web', image: '/weeklyplanner.webp' },
     { id: 4, key: 'rueckenwind', link: 'https://rueckenwind.reise', image: '/rueckenwind.webp' },

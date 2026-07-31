@@ -40,6 +40,11 @@
         "description": "A reactive, professional 3D and 2D planning tool with AI integration for XR-Essential. Built with SparkJS, ThreeJS, and Vite. Hosted with Traefik, Docker-Compose, and Supabase.",
         "technologies": ["SparkJS", "ThreeJS", "Vite", "Traefik", "Docker-Compose", "Supabase"]
       },
+      "llamaparameterscout": {
+        "title": "llama-parameter-scout",
+        "description": "A Python tool for systematically optimizing llama.cpp models. It evaluates different parameter configurations, accounts for hardware and memory constraints, and generates reproducible benchmark reports. Available through a CLI and an interactive terminal interface.",
+        "technologies": ["Python", "llama.cpp", "Textual", "GGUF", "Benchmarking", "AI/LLM"]
+      },
       "trackable": {
         "title": "trackable.",
         "description": "Self-hosted time tracking PWA for freelancers and small teams. Features multiple profiles, monthly PDF/CSV exports, vacation tracking, and automated email reports.",
