@@ -40,6 +40,11 @@
         "description": "A reactive, professional 3D and 2D planning tool with AI integration for XR-Essential. Built with SparkJS, ThreeJS, and Vite. Hosted with Traefik, Docker-Compose, and Supabase.",
         "technologies": ["SparkJS", "ThreeJS", "Vite", "Traefik", "Docker-Compose", "Supabase"]
       },
+      "kallilex": {
+        "title": "Kallilex",
+        "description": "A local-first spell checker and AI writing assistant that lives in the menu bar. Select text in any app, hit a shortcut, and correct or rewrite it in place — offline spell checking via native OS APIs, AI rewriting with your own provider (OpenAI, Ollama, LM Studio). Cross-platform for macOS, Windows, and Linux.",
+        "technologies": ["Rust", "Tauri 2", "Svelte", "TypeScript", "AI/LLM"]
+      },
       "llamaparameterscout": {
         "title": "llama-parameter-scout",
         "description": "A Python tool for systematically optimizing llama.cpp models. It evaluates different parameter configurations, accounts for hardware and memory constraints, and generates reproducible benchmark reports. Available through a CLI and an interactive terminal interface.",

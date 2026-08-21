@@ -40,6 +40,11 @@
         "description": "Ein reaktives, professionelles 3D- und 2D-Planungstool mit KI-Integration für XR-Essential. Basierend auf SparkJS, ThreeJS und Vite. Gehostet mit Traefik, Docker-Compose und Supabase.",
         "technologies": ["SparkJS", "ThreeJS", "Vite", "Traefik", "Docker-Compose", "Supabase"]
       },
+      "kallilex": {
+        "title": "Kallilex",
+        "description": "Ein Local-First-Rechtschreibprüfer und KI-Schreibassistent in der Menüleiste. Text in beliebigen Apps markieren, Shortcut drücken und direkt korrigieren oder umschreiben lassen — Offline-Rechtschreibprüfung über native OS-APIs, KI-Umformulierung mit eigenem Provider (OpenAI, Ollama, LM Studio). Plattformübergreifend für macOS, Windows und Linux.",
+        "technologies": ["Rust", "Tauri 2", "Svelte", "TypeScript", "AI/LLM"]
+      },
       "llamaparameterscout": {
         "title": "llama-parameter-scout",
         "description": "Ein Python-Tool zur systematischen Optimierung von llama.cpp-Modellen. Es testet unterschiedliche Parameterkonfigurationen, berücksichtigt Hardware- und Speichergrenzen und erstellt reproduzierbare Benchmark-Berichte. Bedienbar über CLI oder eine interaktive Terminaloberfläche.",
