@@ -88,10 +88,28 @@
 .bento-grid {
   flex: 1.5;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   grid-auto-rows: minmax(140px, auto);
   gap: 1.5rem;
   width: 100%;
+}
+
+@media (min-width: 992px) {
+  .bento-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(150px, auto);
+    grid-template-areas:
+      "backend  backend  xr"
+      "frontend aidata   xr"
+      "frontend devops   design";
+  }
+
+  .bento-item-backend  { grid-area: backend; }
+  .bento-item-xr       { grid-area: xr; }
+  .bento-item-frontend { grid-area: frontend; }
+  .bento-item-aidata   { grid-area: aidata; }
+  .bento-item-devops   { grid-area: devops; }
+  .bento-item-design   { grid-area: design; }
 }
 
 .bento-item {
@@ -156,46 +174,6 @@
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
   transition: color 0.3s ease;
-}
-
-/* Explicit perfect grid layout sizes */
-.bento-item-frontend {
-  grid-column: span 1;
-  grid-row: span 2;
-}
-
-.bento-item-backend {
-  grid-column: span 2;
-  grid-row: span 2;
-}
-
-.bento-item-devops {
-  grid-column: span 2;
-  grid-row: span 1;
-}
-
-.bento-item-design {
-  grid-column: span 1;
-  grid-row: span 1;
-}
-
-.bento-item-engineering {
-  grid-column: span 3;
-  grid-row: span 1;
-}
-
-@media (max-width: 768px) {
-  .bento-grid {
-    grid-template-columns: 1fr;
-  }
-  .bento-item-frontend,
-  .bento-item-backend,
-  .bento-item-devops,
-  .bento-item-design,
-  .bento-item-engineering {
-    grid-column: span 1 !important;
-    grid-row: auto !important;
-  }
 }
 
 .skills-list {

@@ -11,31 +11,37 @@ const techStack = [
     id: "backend",
     titleKey: "about.techStackTitles.backend",
     color: "var(--peach)",
-    skills: ["Python (uv/poetry)", "Django", "FastAPI", "Node.js", "Ruby on Rails", "PostgreSQL", "Supabase", "SQLite", "PHP/Symfony", "Shopware/Moodle"]
+    skills: ["Python", "Django", "FastAPI", "Node.js", "PostgreSQL", "Supabase"]
+  },
+  {
+    id: "xr",
+    titleKey: "about.techStackTitles.xr",
+    color: "var(--teal)",
+    skills: ["Three.js", "Gaussian Splatting", "SparkJS"]
   },
   {
     id: "frontend",
     titleKey: "about.techStackTitles.frontend",
     color: "var(--sky)",
-    skills: ["React", "TypeScript", "Vue", "Tailwind", "HTMX", "Alpine.js", "Three.js", "GSAP", "Vite", "PWA", "Eleventy"]
+    skills: ["React", "TypeScript", "Vue", "Tailwind", "GSAP", "Vite"]
+  },
+  {
+    id: "aidata",
+    titleKey: "about.techStackTitles.aidata",
+    color: "var(--yellow)",
+    skills: ["AI Engineering (RAG, Agents)", "Coding Agents", "Data Science (Python/R)", "Prompt Engineering"]
   },
   {
     id: "devops",
     titleKey: "about.techStackTitles.devops",
     color: "var(--mauve)",
-    skills: ["Docker & Compose", "Linux/Unix & Bash", "CI/CD & GitHub Actions", "Traefik", "Coolify", "Firewalls", "Git", "Neovim/tmux"]
+    skills: ["Docker & Compose", "Linux & Bash", "CI/CD (GitHub Actions)", "Self-Hosting"]
   },
   {
     id: "design",
     titleKey: "about.techStackTitles.design",
     color: "var(--green)",
-    skills: ["Figma", "Adobe Suite (InDesign, Premiere Pro)", "Affinity Suite", "DaVinci Resolve", "Gimp/Inkscape", "Fusion 360", "Siemens NX"]
-  },
-  {
-    id: "engineering",
-    titleKey: "about.techStackTitles.engineering",
-    color: "var(--yellow)",
-    skills: ["Prompt Engineering", "Coding Agents", "OpenClaw", "AI Engineering", "RAG-Architekturen", "Data Science (R/Python)", "Pandas", "Matplotlib", "Gaussian Splatting", "Pandoc", "Tkinter", "PyGame", "SparkJS"]
+    skills: ["Figma", "Adobe Premiere Pro", "DaVinci Resolve"]
   }
 ];
 

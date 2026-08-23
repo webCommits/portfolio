@@ -25,10 +25,11 @@
     ],
     "techStackTitles": {
       "backend": "Backend & Datenbanken",
+      "xr": "XR & 3D",
       "frontend": "Frontend & UI",
+      "aidata": "AI & Data",
       "devops": "DevOps & Infrastruktur",
-      "design": "Design & Medien",
-      "engineering": "AI & Data Science"
+      "design": "Design & Medien"
     }
   },
   "portfolio": {
