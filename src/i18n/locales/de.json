@@ -19,9 +19,9 @@
   "about": {
     "title": "Über Mich",
     "paragraphs": [
-      "Ich bin Lukas Schaffrath – Webentwickler mit technischem Lehramtsabschluss der RWTH Aachen und einer Leidenschaft für digitale Lösungen. Was einst als studentischer Nebenjob begann, wurde zur Berufung: der Entwicklung moderner, leistungsstarker und bezahlbarer Websites.",
-      "Während meines Studiums war ich als Webentwickler und wissenschaftliche Hilfskraft an der RWTH tätig. Heute betreue ich als IT-Administrator verschiedene technische Projekte am Institut für Anglistik und arbeite parallel selbstständig an Webprojekten unter dem Namen webCommits web Designs.",
-      "Ich setze auf nachhaltigen, sauberen Code und nutzerfreundliche Konzepte. Ob mit klassischen Webtechnologien wie HTML, CSS, JavaScript oder Frameworks wie Django, Ruby on Rails, Eleventy und Symfony. Besonders gerne unterstütze ich kleinere Unternehmen mit individuellen Lösungen. Mein technisches Know-how kombiniere ich mit pädagogischem Feingefühl und klarer Kommunikation. Denn gute Webentwicklung beginnt mit dem Verständnis für die Menschen dahinter."
+      "Ich bin Lukas Schaffrath – Webentwickler mit technischem Lehramtsabschluss der RWTH Aachen und einer Leidenschaft für digitale Lösungen. Was einst als studentischer Nebenjob begann, wurde zur Berufung: der Entwicklung moderner, leistungsstarker und interessanter Projekte.",
+      "Während meines Studiums war ich als Webentwickler und wissenschaftliche Hilfskraft an der RWTH tätig. Heute betreue ich neben meinem Masterstudium als IT-Administrator verschiedene technische Projekte an der RWTH Aachen, entwickle als Full-Stack Webentwickler Webanwendungen für XR-Essential und baue sinnvolle, coole Projekte in meiner Freizeit.",
+      "Ob mit klassischen Webtechnologien wie HTML, CSS, JavaScript oder Frameworks wie Django, Eleventy und Symfony - als freiberuflicher Webentwickler unter dem Namen webCommits web Designs versuche ich stets die bestmögliche Lösung für Probleme zu finden. Mein technisches Know-how kombiniere ich mit pädagogischem Feingefühl und klarer Kommunikation. Manchmal lese ich auch mal ein gutes Buch oder spiele Gitarre."
     ],
     "techStackTitles": {
       "backend": "Backend & Datenbanken",

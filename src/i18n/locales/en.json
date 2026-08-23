@@ -19,9 +19,9 @@
   "about": {
     "title": "About Me",
     "paragraphs": [
-      "I'm Lukas Schaffrath – web developer with a technical teaching degree from RWTH Aachen University and a passion for digital solutions. What started as a student side job became my calling: developing modern, powerful, and affordable websites.",
-      "During my studies, I worked as a web developer and research assistant at RWTH. Today, I manage various technical projects as IT Administrator at the Institute of English Studies and work independently on web projects under the name webCommits web Designs.",
-      "I focus on sustainable, clean code and user-friendly concepts. Whether with classic web technologies like HTML, CSS, JavaScript or frameworks like Django, Ruby on Rails, Eleventy, and Symfony. I particularly enjoy supporting smaller businesses with individual solutions. I combine my technical expertise with pedagogical sensitivity and clear communication. Because good web development starts with understanding the people behind it."
+      "I’m Lukas Schaffrath - a web developer with a degree in technical education from RWTH Aachen University and a passion for digital solutions. What once started as a student side job became a calling: developing modern, high-performance, and engaging projects.",
+      "During my studies, I worked as a web developer and research assistant at RWTH. Today, alongside my master’s studies, I work as an IT administrator on various technical projects at RWTH Aachen, develop web applications for XR-Essential as a full-stack web developer, and build useful, cool projects in my spare time.",
+      "Whether using classic web technologies such as HTML, CSS, and JavaScript or frameworks like Django, Eleventy, and Symfony, as a freelance web developer under the name webCommits web Designs, I always strive to find the best possible solution to any problem. I combine my technical expertise with a strong sense for teaching and clear communication. Every now and then, I also enjoy reading a good book or playing the guitar."
     ],
     "techStackTitles": {
       "backend": "Backend & Databases",
