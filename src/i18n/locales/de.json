@@ -19,7 +19,7 @@
   "about": {
     "title": "Über Mich",
     "paragraphs": [
-      "Ich bin Lukas Schaffrath – Webentwickler mit technischem Lehramtsabschluss der RWTH Aachen und einer Leidenschaft für digitale Lösungen. Was einst als studentischer Nebenjob begann, wurde zur Berufung: der Entwicklung moderner, leistungsstarker und interessanter Projekte.",
+      "Ich bin Lukas Schaffrath, Webentwickler mit technischem Lehramtsabschluss der RWTH Aachen und einer Leidenschaft für digitale Lösungen. Was einst als studentischer Nebenjob begann, wurde zur Berufung: der Entwicklung moderner, leistungsstarker und interessanter Projekte.",
       "Während meines Studiums war ich als Webentwickler und wissenschaftliche Hilfskraft an der RWTH tätig. Heute betreue ich neben meinem Masterstudium als IT-Administrator verschiedene technische Projekte an der RWTH Aachen, entwickle als Full-Stack Webentwickler Webanwendungen für XR-Essential und baue sinnvolle, coole Projekte in meiner Freizeit.",
       "Ob mit klassischen Webtechnologien wie HTML, CSS, JavaScript oder Frameworks wie Django, Eleventy und Symfony - als freiberuflicher Webentwickler unter dem Namen webCommits web Designs versuche ich stets die bestmögliche Lösung für Probleme zu finden. Mein technisches Know-how kombiniere ich mit pädagogischem Feingefühl und klarer Kommunikation. Manchmal lese ich auch mal ein gutes Buch oder spiele Gitarre."
     ],
@@ -43,8 +43,13 @@
       },
       "kallilex": {
         "title": "Kallilex",
-        "description": "Ein Local-First-Rechtschreibprüfer und KI-Schreibassistent in der Menüleiste. Text in beliebigen Apps markieren, Shortcut drücken und direkt korrigieren oder umschreiben lassen — Offline-Rechtschreibprüfung über native OS-APIs, KI-Umformulierung mit eigenem Provider (OpenAI, Ollama, LM Studio). Plattformübergreifend für macOS, Windows und Linux.",
+        "description": "Ein Local-First-Rechtschreibprüfer und KI-Schreibassistent in der Menüleiste. Text in beliebigen Apps markieren, Shortcut drücken und direkt korrigieren oder umschreiben lassen. Die Rechtschreibprüfung läuft offline über native OS-APIs, die KI-Umformulierung über einen eigenen Provider (OpenAI, Ollama, LM Studio). Plattformübergreifend für macOS, Windows und Linux.",
         "technologies": ["Rust", "Tauri 2", "Svelte", "TypeScript", "AI/LLM"]
+      },
+      "tethertty": {
+        "title": "TetherTTY",
+        "description": "Eine schlanke, quelloffene SSH-App fürs iPhone, mit der man laufende tmux- und herdr-Sitzungen auf den eigenen Rechnern wieder aufnimmt. Ohne Backend, Account oder Telemetrie: Das iPhone verbindet sich per SSH direkt mit dem Host. Sie erkennt laufende Sitzungen, verbindet sich nach dem Sperren automatisch neu, prüft Host-Keys per SHA256-Fingerprint und schützt die Zugangsdaten mit Face ID und der iOS-Keychain.",
+        "technologies": ["Swift", "SwiftUI", "SwiftNIO SSH", "SwiftTerm", "iOS Keychain", "Face ID"]
       },
       "llamaparameterscout": {
         "title": "llama-parameter-scout",
@@ -63,7 +68,7 @@
       },
       "rueckenwind": {
         "title": "Rückenwind Reise",
-        "description": "Eine Übersichtsseite als Linktree-Ersatz für unsere Lieblings-YouTuber — inklusive Login, Admin-Panel, interaktiver UI und Animationen.",
+        "description": "Eine Übersichtsseite als Linktree-Ersatz für unsere Lieblings-YouTuber, inklusive Login, Admin-Panel, interaktiver UI und Animationen.",
         "technologies": ["Python", "Django", "Docker-Compose", "Tailwind"]
       },
       "gpupgrade": {
@@ -76,11 +81,6 @@
         "description": "Sprechstunden- und Buchungssystem für die RWTH Aachen University mit Login und Account-Verwaltung. Basierend auf Django und Python.",
         "technologies": ["Django", "Python", "HTMX", "HTML/CSS"]
       },
-      "portfolio": {
-        "title": "Portfolio Website",
-        "description": "Meine persönliche Portfolio-Website, die meine Projekte und Fähigkeiten präsentiert. Entwickelt mit React, GSAP für Animationen und einem modernen, responsiven Design. Überzeugen Sie sich auf Github per Click auf den Link! (Branch: redesign)",
-        "technologies": ["React", "GSAP", "CSS", "HTML"]
-      },
       "spotifydl": {
         "title": "Sonus",
         "description": "Self-hosted Docker-Service zum Download von Spotify-Playlists als MP3. Responsive Web-UI, automatische Playlist-Überwachung, CSV-Import und Spotify-OAuth-Integration. Mit yt-dlp für Downloads und FastAPI im Backend.",
@@ -90,6 +90,11 @@
         "title": "Lashes by Dim",
         "description": "Interaktive Website für eine Wimpernstylistin",
         "technologies": ["HTML", "Vanilla CSS", "Vanilla JavaScript"]
+      },
+      "bauunternehmenguenther": {
+        "title": "Bauunternehmen Günther",
+        "description": "Website für einen Meisterbetrieb im Mauerwerks- und Betonbau aus Baesweiler. Das Design ist an technische Baupläne angelehnt („Werkplan“-Raster). Die Seite ist ein statischer Eleventy-Build mit datengetriebenen Landingpages für sieben Leistungen, lokaler SEO mit JSON-LD und einer interaktiven Anfahrtskarte. Das Kontaktformular läuft über einen eigenen Node-Mailer-Service mit Rate-Limiting und Spam-Schutz; alles zusammen wird mit Docker Compose hinter nginx betrieben.",
+        "technologies": ["Eleventy", "Nunjucks", "Node.js/Express", "Leaflet", "Docker-Compose", "nginx"]
       },
       "benbachmair": {
         "title": "Ben-Bachmair",
@@ -105,16 +110,6 @@
         "title": "MD to HTML/PDF Converter",
         "description": "Eine GUI Python-App, die Markdown-Dateien in HTML oder PDF umwandelt. Erstellt mit Tkinter und Pandoc. Mit Merge- und Export-Funktionalität für mehrere Dateien.",
         "technologies": ["Python", "PythonTKinter", "Pandoc", "GUI"]
-      },
-      "notion": {
-        "title": "Notion to Obsidian Transition Tool",
-        "description": "Ein kleines Script, dass bei der Transition von Notion to Obsidian hilft, durch schlaue Dateikonvertierung.",
-        "technologies": ["Python", "Bash", "Script"]
-      },
-      "snakegame": {
-        "title": "Snake Game",
-        "description": "Ein einfacher Snake-Klon, geschrieben in Python mit PyGame. Erstellt als self-study Programmier-Projekt im Zuge eines Lehrgangs in der Technikdidaktik.",
-        "technologies": ["Python", "PyGame"]
       },
       "weeklyplanner": {
         "title": "Weekly Planner Web",

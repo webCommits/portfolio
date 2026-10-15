@@ -43,8 +43,13 @@
       },
       "kallilex": {
         "title": "Kallilex",
-        "description": "A local-first spell checker and AI writing assistant that lives in the menu bar. Select text in any app, hit a shortcut, and correct or rewrite it in place — offline spell checking via native OS APIs, AI rewriting with your own provider (OpenAI, Ollama, LM Studio). Cross-platform for macOS, Windows, and Linux.",
+        "description": "A local-first spell checker and AI writing assistant that lives in the menu bar. Select text in any app, hit a shortcut, and correct or rewrite it in place. Spell checking runs offline via native OS APIs, and AI rewriting uses your own provider (OpenAI, Ollama, LM Studio). Cross-platform for macOS, Windows, and Linux.",
         "technologies": ["Rust", "Tauri 2", "Svelte", "TypeScript", "AI/LLM"]
+      },
+      "tethertty": {
+        "title": "TetherTTY",
+        "description": "A lightweight, open-source iPhone SSH app for picking up running tmux and herdr sessions on your own machines. No backend, no account, no telemetry: the phone connects directly to the host over SSH. It finds live sessions, reconnects automatically after the phone is locked, checks host keys against SHA256 fingerprints, and protects credentials with Face ID and the iOS Keychain.",
+        "technologies": ["Swift", "SwiftUI", "SwiftNIO SSH", "SwiftTerm", "iOS Keychain", "Face ID"]
       },
       "llamaparameterscout": {
         "title": "llama-parameter-scout",
@@ -63,7 +68,7 @@
       },
       "rueckenwind": {
         "title": "Rückenwind Reise",
-        "description": "An overview page with a Linktree replacement for our favourite YouTubers — includes login, admin panel, interactive UI, and animations.",
+        "description": "An overview page with a Linktree replacement for our favourite YouTubers, including login, admin panel, interactive UI, and animations.",
         "technologies": ["Python", "Django", "Docker-Compose", "Tailwind"]
       },
       "gpupgrade": {
@@ -76,11 +81,6 @@
         "description": "Office hours and booking system for RWTH Aachen University with login and account management. Based on Django and Python.",
         "technologies": ["Django", "Python", "HTMX", "HTML/CSS"]
       },
-      "portfolio": {
-        "title": "Portfolio Website",
-        "description": "My personal portfolio website showcasing my projects and skills. Built with React, GSAP for animations, and a modern, responsive design. Check it out on GitHub! (Branch: redesign)",
-        "technologies": ["React", "GSAP", "CSS", "HTML"]
-      },
       "spotifydl": {
         "title": "Sonus",
         "description": "Self-hosted Docker service to download Spotify playlists as MP3. Responsive web UI, automatic playlist monitoring, CSV import, and Spotify OAuth integration. Uses yt-dlp for downloads and FastAPI in the backend.",
@@ -90,6 +90,11 @@
         "title": "Lashes by Dim",
         "description": "Interactive website for a lash stylist",
         "technologies": ["HTML", "Vanilla CSS", "Vanilla JavaScript"]
+      },
+      "bauunternehmenguenther": {
+        "title": "Bauunternehmen Günther",
+        "description": "Website for a master craftsman business in masonry and concrete construction based in Baesweiler. The design takes its cues from construction blueprints (a “Werkplan” grid). It's a static Eleventy build with data-driven landing pages for seven services, local SEO with JSON-LD, and an interactive directions map. The contact form runs through a custom Node mailer service with rate limiting and spam protection, and everything runs with Docker Compose behind nginx.",
+        "technologies": ["Eleventy", "Nunjucks", "Node.js/Express", "Leaflet", "Docker-Compose", "nginx"]
       },
       "benbachmair": {
         "title": "Ben-Bachmair",
@@ -105,16 +110,6 @@
         "title": "MD to HTML/PDF Converter",
         "description": "A GUI Python app that converts Markdown files to HTML or PDF. Built with Tkinter and Pandoc. With merge and export functionality for multiple files.",
         "technologies": ["Python", "PythonTKinter", "Pandoc", "GUI"]
-      },
-      "notion": {
-        "title": "Notion to Obsidian Transition Tool",
-        "description": "A small script that helps with the transition from Notion to Obsidian through smart file conversion.",
-        "technologies": ["Python", "Bash", "Script"]
-      },
-      "snakegame": {
-        "title": "Snake Game",
-        "description": "A simple Snake clone written in Python with PyGame. Created as a self-study programming project during a didactics course.",
-        "technologies": ["Python", "PyGame"]
       },
       "weeklyplanner": {
         "title": "Weekly Planner Web",

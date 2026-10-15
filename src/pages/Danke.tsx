@@ -37,7 +37,7 @@ const Danke: React.FC = () => {
         
         <p style={{ fontSize: '1.2rem', color: 'var(--text)', marginBottom: '2rem', lineHeight: '1.8' }}>
           Vielen Dank für Ihre Nachricht! Ich habe Ihre Anfrage erhalten und werde mich 
-          schnellstmöglich bei Ihnen melden – in der Regel innerhalb von 24 Stunden.
+          schnellstmöglich bei Ihnen melden, in der Regel innerhalb von 24 Stunden.
         </p>
 
         <p style={{ fontSize: '1rem', color: 'var(--subtext0)', marginBottom: '3rem' }}>
