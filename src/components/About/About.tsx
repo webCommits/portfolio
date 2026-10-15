@@ -86,7 +86,7 @@ const About: React.FC = () => {
       const cleanupFns = items.map((item) => {
         if (!isDesktop) {
           // MOBILE WOW-Effect: Animate flashlight & tilt slightly based on scroll
-          const mobileTrigger = ScrollTrigger.create({
+          ScrollTrigger.create({
             trigger: item,
             start: "top 75%",
             end: "bottom 30%",

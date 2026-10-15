@@ -28,6 +28,25 @@ const colorPalette = [
   'var(--mauve)',
 ];
 
+export const projects: Project[] = [
+  { id: 1, key: 'xrnexus', link: 'https://xr-essential.com/de/products/xr-nexus', image: '/xrnexus.webp' },
+  { id: 17, key: 'kallilex', link: 'https://kallilex.webcommits.info/', image: '/kallilex.webp' },
+  { id: 18, key: 'tethertty', link: 'https://tethertty.webcommits.info/', image: '/tethertty.webp' },
+  { id: 4, key: 'rueckenwind', link: 'https://rueckenwind.reise', image: '/rueckenwind.webp' },
+  { id: 6, key: 'anglistikweb', link: 'https://web.anglistik.rwth-aachen.de', image: '/anglistikweb.webp' },
+  { id: 8, key: 'spotifydl', link: 'https://github.com/LStoneyy/spotify-download', image: '/spotifydl.webp' },
+  { id: 2, key: 'trackable', link: 'https://github.com/webCommits/trackable', image: '/trackable.webp' },
+  { id: 3, key: 'weeklyplanner', link: 'https://github.com/LStoneyy/weekly-planner-web', image: '/weeklyplanner.webp' },
+  { id: 9, key: 'webcommits', link: 'https://www.webcommits.info', image: '/webcommits.webp' },
+  { id: 5, key: 'gpupgrade', link: 'https://webcommits.github.io/gpupgrade/', image: '/gpupgrade.webp' },
+  { id: 10, key: 'lashesbydim', link: 'https://lashesbydim.de/', image: '/lashesbydim.webp' },
+  { id: 19, key: 'bauunternehmenguenther', link: 'https://guenther-bau.com', image: '/bauunternehmen-guenther.webp' },
+  { id: 11, key: 'benbachmair', link: 'http://ben-bachmair.de/', image: '/benbachmair.webp' },
+  { id: 12, key: 'anzeigeschalten', link: 'https://lstoneyy.github.io/anzeigeschalten/', image: '/anzeigeschalten.webp' },
+  { id: 16, key: 'llamaparameterscout', link: 'https://github.com/LStoneyy/llama-parameter-scout', image: '/llama-parameter-scout.webp' },
+  { id: 13, key: 'mdtopdf', link: 'https://github.com/LStoneyy/md-to-html-pdf', image: '/mdtopdf.webp' },
+];
+
 const Portfolio: React.FC = () => {
   const { t, i18n } = useTranslation();
   const portfolioRef = useRef<HTMLElement>(null);
@@ -35,25 +54,6 @@ const Portfolio: React.FC = () => {
   const backgroundRef = useRef<HTMLDivElement>(null);
   const baseAnimationsRef = useRef<gsap.core.Tween[]>([]);
   const currentProjectRef = useRef(0);
-
-  const projects: Project[] = [
-    { id: 1, key: 'xrnexus', link: 'https://xr-essential.com/de/products/xr-nexus', image: '/xrnexus.webp' },
-    { id: 17, key: 'kallilex', link: 'https://kallilex.webcommits.info/', image: '/kallilex.webp' },
-    { id: 18, key: 'tethertty', link: 'https://tethertty.webcommits.info/', image: '/tethertty.webp' },
-    { id: 4, key: 'rueckenwind', link: 'https://rueckenwind.reise', image: '/rueckenwind.webp' },
-    { id: 6, key: 'anglistikweb', link: 'https://web.anglistik.rwth-aachen.de', image: '/anglistikweb.webp' },
-    { id: 8, key: 'spotifydl', link: 'https://github.com/LStoneyy/spotify-download', image: '/spotifydl.webp' },
-    { id: 2, key: 'trackable', link: 'https://github.com/webCommits/trackable', image: '/trackable.webp' },
-    { id: 3, key: 'weeklyplanner', link: 'https://github.com/LStoneyy/weekly-planner-web', image: '/weeklyplanner.webp' },
-    { id: 9, key: 'webcommits', link: 'https://www.webcommits.info', image: '/webcommits.webp' },
-    { id: 5, key: 'gpupgrade', link: 'https://webcommits.github.io/gpupgrade/', image: '/gpupgrade.webp' },
-    { id: 10, key: 'lashesbydim', link: 'https://lashesbydim.de/', image: '/lashesbydim.webp' },
-    { id: 19, key: 'bauunternehmenguenther', link: 'https://guenther-bau.com', image: '/bauunternehmen-guenther.webp' },
-    { id: 11, key: 'benbachmair', link: 'http://ben-bachmair.de/', image: '/benbachmair.webp' },
-    { id: 12, key: 'anzeigeschalten', link: 'https://lstoneyy.github.io/anzeigeschalten/', image: '/anzeigeschalten.webp' },
-    { id: 16, key: 'llamaparameterscout', link: 'https://github.com/LStoneyy/llama-parameter-scout', image: '/llama-parameter-scout.webp' },
-    { id: 13, key: 'mdtopdf', link: 'https://github.com/LStoneyy/md-to-html-pdf', image: '/mdtopdf.webp' },
-  ];
 
   const startBaseAnimations = useCallback((shapes: NodeListOf<Element>, initialStates?: ShapeState[], projectIndex: number = 0) => {
     baseAnimationsRef.current.forEach(anim => anim.kill());
